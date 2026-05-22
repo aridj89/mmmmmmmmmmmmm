@@ -1,0 +1,114 @@
+{
+  "nav": {
+    "home": "ACCUEIL",
+    "work": "PROJETS",
+    "contact": "CONTACT"
+  },
+  "hero": {
+    "title_1": "NOUS CONSTRUISONS",
+    "title_highlight": "L'INFRASTRUCTURE",
+    "title_2": "DE COMMUNICATION DU FUTUR.",
+    "description": "Un cabinet pluridisciplinaire spécialisé dans le développement rapide et la stratégie numérique agressive. Nous comblons le fossé entre la complexité technique et l'impact sur le marché.",
+    "view_portfolio": "VOIR LE PORTFOLIO",
+    "scroll": "DÉFILEMENT DÉTECTÉ"
+  },
+  "philosophy": {
+    "label": "CE QUE NOUS FAISONS",
+    "title_1": "NOTRE",
+    "title_2": "EXPERTISE.",
+    "service_1_title": "Développement de Logiciels",
+    "service_1_desc": "Applications web, sites vitrines et plateformes digitales sur mesure.",
+    "service_2_title": "Studio Photographie",
+    "service_2_desc": "Shootings professionnels, packshots produits et portraits corporate.",
+    "service_3_title": "Création de Contenu",
+    "service_3_desc": "Vidéos, reels, UGC et contenu visuel percutant pour vos réseaux.",
+    "service_4_title": "Social Media Management",
+    "service_4_desc": "Stratégie, planification et gestion complète de vos réseaux sociaux."
+  },
+  "team": {
+    "label": "L'ÉQUIPE",
+    "title": "NOTRE ÉQUIPE.",
+    "description": "Rencontrez les spécialistes derrière notre pipeline de livraison haute performance.",
+    "stats": "7 SPÉCIALISTES / 0 COMPROMIS"
+  },
+  "cta": {
+    "title": "PRÊT POUR LA MISSION ?",
+    "button": "CONNECTER"
+  },
+  "work": {
+    "label": "ARCHIVE SÉLECTIONNÉE",
+    "title_1": "NOS",
+    "title_2": "PROJETS"
+  },
+  "reel": {
+    "label": "ARCHIVE SÉLECTIONNÉE",
+    "title": "NOS CRÉATIONS",
+    "live": "EN DIRECT",
+    "videos": "VIDÉOS",
+    "video": "VIDÉO"
+  },
+  "bento": {
+    "label": "STRUCTURE",
+    "title": "Architecture de Design",
+    "subtitle": "Systèmes Graphiques & Structurels",
+    "specimen_monitor": "MONITEUR DE SPÉCIMEN EN DIRECT",
+    "cycle": "CYCLE",
+    "view_specimen": "VOIR LE SPÉCIMEN",
+    "close_specimen": "FERMER LE SPÉCIMEN",
+    "explore_case": "EXPLORER L'ÉTUDE DE CAS",
+    "specimen_title": "AGENCY_MONO_SPECIMEN.XML",
+    "close": "FERMER",
+    "glyph": "MATRICE DE CARACTÈRES GLYPHES",
+    "thickness": "COMPARAISONS DE VARS / ÉPAISSEUR",
+    "light": "LÉGER 300 - Nous construisons l'infrastructure de communication du futur.",
+    "semibold": "DEMI-GRAS 600 - Nous construisons l'infrastructure de communication du futur.",
+    "black": "NOIR 900 - Nous construisons l'infrastructure de communication du futur.",
+    "acknowledge": "CONFIRMER"
+  },
+  "contact": {
+    "presence_label": "PRÉSENCE MONDIALE",
+    "find_title": "NOUS TROUVER",
+    "find_desc": "Situés à l'intersection de l'innovation numérique et de la stratégie culturelle. Passez dans notre studio phare pour rencontrer les spécialistes.",
+    "directions": "OBTENIR L'ITINÉRAIRE",
+    "radar_online": "RADAR_CONNECTÉ",
+    "precision": "MÉTRIQUES DE PRÉCISION",
+    "stabilized": "STABILISÉ",
+    "connect_label": "LIEN SÉCURISÉ",
+    "connect_title": "CONNECTER",
+    "connect_desc": "Accès instantané à nos responsables stratégiques via vos plateformes préférées. Déclenchez l'alignement en temps réel.",
+    "whatsapp": "WhatsApp",
+    "whatsapp_handle": "Chat Sécurisé",
+    "whatsapp_desc": "Connectez-vous directement à notre équipe pour des consultations rapides.",
+    "telegram": "Telegram",
+    "telegram_handle": "Mises à Jour Directes",
+    "telegram_desc": "Abonnez-vous à notre canal de communications sécurisé pour les mises à jour directes.",
+    "instagram": "Instagram",
+    "instagram_handle": "Histoires Visuelles",
+    "instagram_desc": "Visualisez les coulisses de nos sprints de design, installations clients et processus créatifs.",
+    "copied": "COPIÉ"
+  },
+  "team_roles": {
+    "ramy-zoubiri": "FONDATEUR & CONTENT CREATOR",
+    "oussama-hamdaoui": "CO-FONDATEUR & ÉDITEUR",
+    "maria-boukhalfa": "MEDIA FACE",
+    "chaima": "GRAPHIC DESIGNER",
+    "amel-allaoua": "CONTENT CREATOR",
+    "yassmine-tifratene": "UGC CONTENT CREATOR",
+    "dikra": "TEAM MEMBER"
+  },
+  "reel_subtitles": {
+    "ugc": "Skincare & Produits",
+    "dentist": "Cliniques Dentaires",
+    "esthetique": "Dermatologie & Soins",
+    "pharmacie": "Medical For Pharmacy",
+    "orthophonia": "Cabinet Orthophonie"
+  },
+  "footer": {
+    "tagline": "INFRASTRUCTURE DE COMMUNICATION POUR LE FUTUR.",
+    "strategy": "STRATÉGIE",
+    "production": "PRODUCTION",
+    "connect": "CONNECTER",
+    "disclaimer": "EST. 2024 / PIPELINE DE LIVRAISON CONSTANT / STRATÉGIES OPTIMISÉES POUR LE PAYSAGE MONDIAL.",
+    "copyright": "(C) {{year}} MISSION VERSE. TOUS DROITS RÉSERVÉS."
+  }
+}

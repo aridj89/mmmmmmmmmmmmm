@@ -1,0 +1,114 @@
+{
+  "nav": {
+    "home": "HOME",
+    "work": "WORK",
+    "contact": "CONTACT"
+  },
+  "hero": {
+    "title_1": "WE BUILD",
+    "title_highlight": "COMMUNICATION",
+    "title_2": "INFRASTRUCTURE FOR THE FUTURE.",
+    "description": "A multi-disciplinary firm specializing in rapid development and aggressive digital strategy. We bridge the gap between technical complexity and market impact.",
+    "view_portfolio": "VIEW PORTFOLIO",
+    "scroll": "SCROLL DETECTED"
+  },
+  "philosophy": {
+    "label": "WHAT WE DO",
+    "title_1": "OUR",
+    "title_2": "EXPERTISE.",
+    "service_1_title": "Software Development",
+    "service_1_desc": "Web applications, showcase websites and custom digital platforms.",
+    "service_2_title": "Photography Studio",
+    "service_2_desc": "Professional shootings, product packshots and corporate portraits.",
+    "service_3_title": "Content Creation",
+    "service_3_desc": "Videos, reels, UGC and impactful visual content for your networks.",
+    "service_4_title": "Social Media Management",
+    "service_4_desc": "Strategy, planning and complete management of your social networks."
+  },
+  "team": {
+    "label": "THE SQUAD",
+    "title": "OUR TEAM.",
+    "description": "Meet the specialists behind our high-performance delivery pipeline.",
+    "stats": "7 SPECIALISTS / 0 COMPROMISE"
+  },
+  "cta": {
+    "title": "READY FOR THE MISSION?",
+    "button": "CONNECT"
+  },
+  "work": {
+    "label": "SELECTED ARCHIVE",
+    "title_1": "OUR",
+    "title_2": "WORK"
+  },
+  "reel": {
+    "label": "SELECTED ARCHIVE",
+    "title": "OUR CREATIONS",
+    "live": "LIVE",
+    "videos": "VIDEOS",
+    "video": "VIDEO"
+  },
+  "bento": {
+    "label": "STRUCTURE",
+    "title": "Design Architecture",
+    "subtitle": "Graphic & Structural Systems",
+    "specimen_monitor": "LIVE SPECIMEN MONITOR",
+    "cycle": "CYCLE",
+    "view_specimen": "VIEW BRIEF SPECIMEN",
+    "close_specimen": "CLOSE BRIEF SPECIMEN",
+    "explore_case": "EXPLORE CASE STUDY",
+    "specimen_title": "AGENCY_MONO_SPECIMEN.XML",
+    "close": "CLOSE",
+    "glyph": "GLYPH CHARACTER MATRIX",
+    "thickness": "VARS / THICKNESS COMPARISONS",
+    "light": "LIGHT 300 - We build communication infrastructure for the future.",
+    "semibold": "SEMIBOLD 600 - We build communication infrastructure for the future.",
+    "black": "BLACK 900 - We build communication infrastructure for the future.",
+    "acknowledge": "ACKNOWLEDGE"
+  },
+  "contact": {
+    "presence_label": "GLOBAL PRESENCE",
+    "find_title": "FIND US",
+    "find_desc": "Located at the intersection of digital innovation and cultural strategy. Drop by our flagship studio to meet the specialists.",
+    "directions": "GET DIRECTIONS",
+    "radar_online": "RADAR_TETHER_ONLINE",
+    "precision": "PRECISION METRICS",
+    "stabilized": "STABILIZED",
+    "connect_label": "SECURE LINK",
+    "connect_title": "CONNECT",
+    "connect_desc": "Instant access to our strategy leads through your preferred platforms. Trigger alignment in real-time.",
+    "whatsapp": "WhatsApp",
+    "whatsapp_handle": "Secure Chat",
+    "whatsapp_desc": "Connect directly with our team for rapid consultations.",
+    "telegram": "Telegram",
+    "telegram_handle": "Direct Updates",
+    "telegram_desc": "Subscribe to our secure communications channel for direct updates.",
+    "instagram": "Instagram",
+    "instagram_handle": "Visual Stories",
+    "instagram_desc": "View behind-the-scenes design sprints, client installations, and creative processes.",
+    "copied": "COPIED"
+  },
+  "team_roles": {
+    "ramy-zoubiri": "FOUNDER & CONTENT CREATOR",
+    "oussama-hamdaoui": "CO-FOUNDER & EDITOR",
+    "maria-boukhalfa": "MEDIA FACE",
+    "chaima": "GRAPHIC DESIGNER",
+    "amel-allaoua": "CONTENT CREATOR",
+    "yassmine-tifratene": "UGC CONTENT CREATOR",
+    "dikra": "TEAM MEMBER"
+  },
+  "reel_subtitles": {
+    "ugc": "Skincare & Products",
+    "dentist": "Dental Clinics",
+    "esthetique": "Dermatology & Care",
+    "pharmacie": "Medical For Pharmacy",
+    "orthophonia": "Speech Therapy Clinic"
+  },
+  "footer": {
+    "tagline": "COMMUNICATION INFRASTRUCTURE FOR THE FUTURE.",
+    "strategy": "STRATEGY",
+    "production": "PRODUCTION",
+    "connect": "CONNECT",
+    "disclaimer": "EST. 2024 / CONSTANT DELIVERY PIPELINE / OPTIMIZED STRATEGIES FOR THE GLOBAL LANDSCAPE.",
+    "copyright": "(C) {{year}} MISSION VERSE. ALL RIGHTS RESERVED."
+  }
+}

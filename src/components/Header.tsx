@@ -1,0 +1,187 @@
+import React from 'react';
+import { useTranslation } from 'react-i18next';
+import { Menu, X, Globe } from 'lucide-react';
+import { ActiveTab } from '../types';
+
+interface HeaderProps {
+  activeTab: ActiveTab;
+  setActiveTab: (tab: ActiveTab) => void;
+}
+
+const LANGUAGES = [
+  { code: 'en', label: 'EN', full: 'English' },
+  { code: 'fr', label: 'FR', full: 'Français' }
+];
+
+export default function Header({ activeTab, setActiveTab }: HeaderProps) {
+  const { t, i18n } = useTranslation();
+  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+  const [langDropdownOpen, setLangDropdownOpen] = React.useState(false);
+  const langRef = React.useRef<HTMLDivElement>(null);
+
+  const navItems: { key: ActiveTab; labelKey: string }[] = [
+    { key: 'HOME', labelKey: 'nav.home' },
+    { key: 'WORK', labelKey: 'nav.work' },
+    { key: 'CONTACT', labelKey: 'nav.contact' }
+  ];
+
+  const currentLang = LANGUAGES.find(l => l.code === i18n.language) || LANGUAGES[0];
+
+  const changeLanguage = (code: string) => {
+    i18n.changeLanguage(code);
+    setLangDropdownOpen(false);
+  };
+
+  // Close language dropdown when clicking outside
+  React.useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      if (langRef.current && !langRef.current.contains(e.target as Node)) {
+        setLangDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClick);
+    return () => document.removeEventListener('mousedown', handleClick);
+  }, []);
+
+  return (
+    <>
+      <header className="bg-black/85 backdrop-blur-xl border-b border-white/10 fixed top-0 w-full z-50 px-5 md:px-16 h-16 flex justify-between items-center">
+        {/* Left Section */}
+        <div className="flex items-center gap-4">
+          <button 
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden text-zinc-400 hover:text-white transition-colors duration-200"
+            aria-label="Toggle mobile menu"
+            id="mobile-menu-trigger"
+          >
+            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+          
+          
+          <button 
+            onClick={() => setActiveTab('HOME')} 
+            className="flex items-center gap-2 hover:opacity-90 transition-opacity"
+            id="logo-button"
+          >
+            <img src="/logo.jpg" alt="Mission Verse" className="w-8 h-8 rounded-sm object-cover" />
+            <span className="font-hanken font-extrabold tracking-tighter text-lg md:text-xl text-white">MISSION VERSE</span>
+          </button>
+        </div>
+
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex gap-8 items-center">
+          {navItems.map((item) => (
+            <button
+               key={item.key}
+               onClick={() => {
+                 setActiveTab(item.key);
+                 window.scrollTo({ top: 0, behavior: 'smooth' });
+               }}
+               className={`font-mono text-xs tracking-widest transition-all duration-300 relative py-1 ${
+                 activeTab === item.key 
+                   ? 'text-white font-semibold' 
+                   : 'text-zinc-500 hover:text-zinc-300'
+               }`}
+               id={`nav-tab-${item.key}`}
+            >
+              {t(item.labelKey)}
+              {activeTab === item.key && (
+                <span className="absolute bottom-0 left-0 w-full h-[1px] bg-blue-500" />
+              )}
+            </button>
+          ))}
+        </nav>
+
+        {/* Right Section: Language Selector */}
+        <div className="flex items-center gap-3">
+          {/* Language Dropdown */}
+          <div className="relative" ref={langRef}>
+            <button 
+              onClick={() => setLangDropdownOpen(!langDropdownOpen)}
+              className="flex items-center gap-1.5 px-3 py-1.5 border border-white/10 text-zinc-400 hover:text-white hover:border-blue-500 rounded-sm transition-all duration-300 font-mono text-[10px] tracking-widest uppercase"
+              id="lang-selector-btn"
+            >
+              <Globe size={12} className="text-[#0071ec]" />
+              {currentLang.label}
+            </button>
+            
+            {langDropdownOpen && (
+              <div className="absolute right-0 top-full mt-2 bg-[#131313] border border-white/10 rounded-md shadow-2xl shadow-black/60 overflow-hidden min-w-[140px] z-50 animate-fade-in">
+                {LANGUAGES.map((lang) => (
+                  <button
+                    key={lang.code}
+                    onClick={() => changeLanguage(lang.code)}
+                    className={`w-full text-left px-4 py-2.5 font-mono text-xs tracking-wider transition-all duration-200 flex items-center justify-between gap-4 ${
+                      i18n.language === lang.code
+                        ? 'bg-[#0071ec]/10 text-[#0071ec] font-semibold'
+                        : 'text-zinc-400 hover:bg-white/5 hover:text-white'
+                    }`}
+                    id={`lang-option-${lang.code}`}
+                  >
+                    <span>{lang.full}</span>
+                    <span className="text-[10px] text-zinc-600">{lang.label}</span>
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      </header>
+
+      {/* Mobile Menu Drawer Overlay */}
+      {mobileMenuOpen && (
+        <div 
+          className="fixed inset-0 z-40 bg-black/95 flex flex-col justify-center items-center gap-8 md:hidden transition-all duration-300"
+          id="mobile-drawer"
+        >
+          <button 
+            onClick={() => setMobileMenuOpen(false)}
+            className="absolute top-5 left-5 text-zinc-400 hover:text-white"
+            aria-label="Close menu"
+            id="close-mobile-menu"
+          >
+            <X size={24} />
+          </button>
+          
+          {navItems.map((item) => (
+            <button
+              key={item.key}
+              onClick={() => {
+                setActiveTab(item.key);
+                setMobileMenuOpen(false);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className={`font-hanken text-3xl font-bold tracking-tight py-2 transition-all ${
+                activeTab === item.key ? 'text-blue-500 border-b-2 border-blue-500' : 'text-zinc-400 hover:text-white'
+              }`}
+              id={`mobile-tab-${item.key}`}
+            >
+              {t(item.labelKey)}
+            </button>
+          ))}
+          
+          {/* Language Selector in Mobile Drawer */}
+          <div className="mt-8 flex gap-3">
+            {LANGUAGES.map((lang) => (
+              <button
+                key={lang.code}
+                onClick={() => {
+                  changeLanguage(lang.code);
+                  setMobileMenuOpen(false);
+                }}
+                className={`px-4 py-2.5 border font-mono text-xs tracking-widest uppercase transition-all duration-300 rounded-sm ${
+                  i18n.language === lang.code
+                    ? 'border-[#0071ec] bg-[#0071ec]/10 text-[#0071ec] font-bold'
+                    : 'border-white/15 text-zinc-400 hover:text-white hover:border-zinc-500'
+                }`}
+                id={`mobile-lang-${lang.code}`}
+              >
+                {lang.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+    </>
+  );
+}
