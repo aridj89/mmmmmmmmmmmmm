@@ -9,6 +9,20 @@ export const TEAM_MEMBERS: TeamMember[] = [
     imageUrl: '/team/Ramy.jpg'
   },
   {
+    id: 'aridj-bouzidi',
+    name: 'ARIDJ BOUZIDI',
+    role: 'FONDATRICE',
+    category: 'LEADERSHIP',
+    imageUrl: '/team/aridj.jpg'
+  },
+  {
+    id: 'direche-abderrahmen',
+    name: 'DIRECHE ABDERRAHMEN',
+    role: 'FONDATEUR',
+    category: 'LEADERSHIP',
+    imageUrl: '/team/abdou.jpg'
+  },
+  {
     id: 'oussama-hamdaoui',
     name: 'OUSSAMA HAMDAOUI',
     role: 'CO-FONDATEUR & ÉDITEUR',
