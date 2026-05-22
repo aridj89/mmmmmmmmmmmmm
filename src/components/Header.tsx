@@ -6,16 +6,18 @@ import { ActiveTab } from '../types';
 interface HeaderProps {
   activeTab: ActiveTab;
   setActiveTab: (tab: ActiveTab) => void;
+  isMenuOpen: boolean;
+  setIsMenuOpen: (open: boolean) => void;
 }
 
 const LANGUAGES = [
   { code: 'en', label: 'EN', full: 'English' },
-  { code: 'fr', label: 'FR', full: 'Français' }
+  { code: 'fr', label: 'FR', full: 'Français' },
+  { code: 'ar', label: 'AR', full: 'العربية' }
 ];
 
-export default function Header({ activeTab, setActiveTab }: HeaderProps) {
+export default function Header({ activeTab, setActiveTab, isMenuOpen, setIsMenuOpen }: HeaderProps) {
   const { t, i18n } = useTranslation();
-  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
   const [langDropdownOpen, setLangDropdownOpen] = React.useState(false);
   const langRef = React.useRef<HTMLDivElement>(null);
 
@@ -45,18 +47,17 @@ export default function Header({ activeTab, setActiveTab }: HeaderProps) {
 
   return (
     <>
-      <header className="bg-black/85 backdrop-blur-xl border-b border-white/10 fixed top-0 w-full z-50 px-5 md:px-16 h-16 flex justify-between items-center">
+      <header className="bg-black/85 backdrop-blur-xl border-b border-white/10 fixed top-0 w-full z-50 px-5 md:px-16 h-16 flex justify-between items-center transition-all duration-500">
         {/* Left Section */}
         <div className="flex items-center gap-4">
           <button 
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden text-zinc-400 hover:text-white transition-colors duration-200"
             aria-label="Toggle mobile menu"
             id="mobile-menu-trigger"
           >
-            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
-          
           
           <button 
             onClick={() => setActiveTab('HOME')} 
@@ -127,61 +128,6 @@ export default function Header({ activeTab, setActiveTab }: HeaderProps) {
           </div>
         </div>
       </header>
-
-      {/* Mobile Menu Drawer Overlay */}
-      {mobileMenuOpen && (
-        <div 
-          className="fixed inset-0 z-40 bg-black/95 flex flex-col justify-center items-center gap-8 md:hidden transition-all duration-300"
-          id="mobile-drawer"
-        >
-          <button 
-            onClick={() => setMobileMenuOpen(false)}
-            className="absolute top-5 left-5 text-zinc-400 hover:text-white"
-            aria-label="Close menu"
-            id="close-mobile-menu"
-          >
-            <X size={24} />
-          </button>
-          
-          {navItems.map((item) => (
-            <button
-              key={item.key}
-              onClick={() => {
-                setActiveTab(item.key);
-                setMobileMenuOpen(false);
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              }}
-              className={`font-hanken text-3xl font-bold tracking-tight py-2 transition-all ${
-                activeTab === item.key ? 'text-blue-500 border-b-2 border-blue-500' : 'text-zinc-400 hover:text-white'
-              }`}
-              id={`mobile-tab-${item.key}`}
-            >
-              {t(item.labelKey)}
-            </button>
-          ))}
-          
-          {/* Language Selector in Mobile Drawer */}
-          <div className="mt-8 flex gap-3">
-            {LANGUAGES.map((lang) => (
-              <button
-                key={lang.code}
-                onClick={() => {
-                  changeLanguage(lang.code);
-                  setMobileMenuOpen(false);
-                }}
-                className={`px-4 py-2.5 border font-mono text-xs tracking-widest uppercase transition-all duration-300 rounded-sm ${
-                  i18n.language === lang.code
-                    ? 'border-[#0071ec] bg-[#0071ec]/10 text-[#0071ec] font-bold'
-                    : 'border-white/15 text-zinc-400 hover:text-white hover:border-zinc-500'
-                }`}
-                id={`mobile-lang-${lang.code}`}
-              >
-                {lang.label}
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
     </>
   );
 }

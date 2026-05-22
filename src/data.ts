@@ -2,27 +2,6 @@ import { TeamMember, Reel, BentoProject } from './types';
 
 export const TEAM_MEMBERS: TeamMember[] = [
   {
-    id: 'ramy-zoubiri',
-    name: 'RAMY ZOUBIRI',
-    role: 'FONDATEUR & CONTENT CREATOR',
-    category: 'LEADERSHIP',
-    imageUrl: '/team/Ramy.jpg'
-  },
-  {
-    id: 'aridj-bouzidi',
-    name: 'ARIDJ BOUZIDI',
-    role: 'FONDATRICE',
-    category: 'LEADERSHIP',
-    imageUrl: '/team/aridj.jpg'
-  },
-  {
-    id: 'direche-abderrahmen',
-    name: 'DIRECHE ABDERRAHMEN',
-    role: 'FONDATEUR',
-    category: 'LEADERSHIP',
-    imageUrl: '/team/abdou.jpg'
-  },
-  {
     id: 'oussama-hamdaoui',
     name: 'OUSSAMA HAMDAOUI',
     role: 'CO-FONDATEUR & ÉDITEUR',
@@ -44,6 +23,27 @@ export const TEAM_MEMBERS: TeamMember[] = [
     imageUrl: '/team/CHAIMA.jpg'
   },
   {
+    id: 'ramy-zoubiri',
+    name: 'RAMY ZOUBIRI',
+    role: 'FONDATEUR & CONTENT CREATOR',
+    category: 'LEADERSHIP',
+    imageUrl: '/team/Ramy.jpg'
+  },
+  {
+    id: 'aridj-bouzidi',
+    name: 'ARIDJ BOUZIDI',
+    role: 'FONDATRICE & DÉVELOPPEUSE',
+    category: 'ENGINEERING',
+    imageUrl: '/team/aridj.jpg'
+  },
+  {
+    id: 'direche-abderrahmen',
+    name: 'DIRECHE ABDERRAHMEN',
+    role: 'FONDATEUR, PHOTOGRAPHE & DÉVELOPPEUR',
+    category: 'ENGINEERING',
+    imageUrl: '/team/abdou.jpg'
+  },
+  {
     id: 'amel-allaoua',
     name: 'AMEL ALLAOUA',
     role: 'CONTENT CREATOR',
@@ -58,9 +58,9 @@ export const TEAM_MEMBERS: TeamMember[] = [
     imageUrl: '/team/yassmine.jpg'
   },
   {
-    id: 'dikra',
-    name: 'DIKRA',
-    role: 'TEAM MEMBER',
+    id: 'dhikra',
+    name: 'DHIKRA',
+    role: 'UGC CONTENT CREATOR',
     category: 'DESIGN',
     imageUrl: '/team/dikra.jpg'
   }

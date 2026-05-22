@@ -7,6 +7,7 @@ const CLIENT_LOGOS = [
   { id: 3, src: '/logos/clinic-3.png', alt: 'Client 3' },
   { id: 4, src: '/logos/clinic-4.png', alt: 'Client 4' },
   { id: 5, src: '/logos/clinic-5.png', alt: 'Client 5' },
+  { id: 6, src: '/logos/clinic-6.png', alt: 'Client 6' },
 ];
 
 export default function LogoMarquee() {
@@ -72,7 +73,7 @@ export default function LogoMarquee() {
                     <img
                       src={logo.src}
                       alt={logo.alt}
-                      className="h-12 sm:h-14 md:h-16 w-auto object-contain opacity-85 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500 pointer-events-none"
+                      className="h-20 sm:h-24 md:h-28 w-auto object-contain opacity-85 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500 pointer-events-none"
                       draggable={false}
                     />
                   </div>

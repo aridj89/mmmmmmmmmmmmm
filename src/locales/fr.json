@@ -1,7 +1,7 @@
 {
   "nav": {
     "home": "ACCUEIL",
-    "work": "PROJETS",
+    "work": "ÉQUIPE",
     "contact": "CONTACT"
   },
   "hero": {
@@ -9,7 +9,7 @@
     "title_highlight": "L'INFRASTRUCTURE",
     "title_2": "DE COMMUNICATION DU FUTUR.",
     "description": "Un cabinet pluridisciplinaire spécialisé dans le développement rapide et la stratégie numérique agressive. Nous comblons le fossé entre la complexité technique et l'impact sur le marché.",
-    "view_portfolio": "VOIR LE PORTFOLIO",
+    "view_portfolio": "NOTRE ÉQUIPE",
     "scroll": "DÉFILEMENT DÉTECTÉ"
   },
   "philosophy": {
@@ -88,15 +88,15 @@
     "copied": "COPIÉ"
   },
   "team_roles": {
-    "ramy-zoubiri": "FONDATEUR & CONTENT CREATOR",
-    "aridj-bouzidi": "FONDATRICE",
-    "direche-abderrahmen": "FONDATEUR",
     "oussama-hamdaoui": "CO-FONDATEUR & ÉDITEUR",
     "maria-boukhalfa": "MEDIA FACE",
     "chaima": "GRAPHIC DESIGNER",
+    "ramy-zoubiri": "FONDATEUR & CONTENT CREATOR",
+    "aridj-bouzidi": "FONDATRICE & DÉVELOPPEUSE",
+    "direche-abderrahmen": "FONDATEUR, PHOTOGRAPHE & DÉVELOPPEUR",
     "amel-allaoua": "CONTENT CREATOR",
     "yassmine-tifratene": "UGC CONTENT CREATOR",
-    "dikra": "TEAM MEMBER"
+    "dhikra": "CRÉATRICE DE CONTENU UGC"
   },
   "reel_subtitles": {
     "ugc": "Skincare & Produits",

@@ -51,18 +51,22 @@ export default function ContactSection() {
       <div className="max-w-7xl mx-auto space-y-24">
         
         {/* Section 1: FIND US */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 border-t border-white/10 pt-16" id="find-us-grid">
-          <div className="space-y-6">
+        <div className="border-t border-white/10 pt-16 space-y-12" id="find-us-container">
+          {/* Title Area */}
+          <div className="space-y-6 max-w-2xl">
             <span className="font-mono text-xs text-[#0071ec] tracking-widest uppercase block font-semibold">{t('contact.presence_label')}</span>
             <h2 className="font-hanken text-4xl sm:text-5xl font-extrabold text-white leading-tight uppercase">
               {t('contact.find_title')}
             </h2>
-            <p className="font-sans text-sm sm:text-base text-zinc-400 leading-relaxed font-light max-w-md">
+            <p className="font-sans text-sm sm:text-base text-zinc-400 leading-relaxed font-light">
               {t('contact.find_desc')}
             </p>
+          </div>
 
+          {/* Grid for Card and Map */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-16" id="find-us-grid">
             {/* Studio Address Card */}
-            <div className="p-8 bg-[#1A1A1A] border border-white/10 rounded-md space-y-4 hover:border-[#0071ec] transition-colors relative group">
+            <div className="p-8 bg-[#1A1A1A] border border-white/10 rounded-md space-y-4 hover:border-[#0071ec] transition-colors relative group h-full flex flex-col justify-center">
               <div className="flex justify-between items-start">
                 <div>
                   <h3 className="font-hanken text-lg font-bold text-white uppercase">{OFFICE_LOCATION.name}</h3>
@@ -75,7 +79,7 @@ export default function ContactSection() {
                 </div>
               </div>
 
-              <div className="pt-2">
+              <div className="pt-6">
                 <a 
                   href="https://www.google.com/maps/place/H53H%2BP83,+Rte+de+Biskra,+Batna,+Algeria"
                   target="_blank"
@@ -87,32 +91,32 @@ export default function ContactSection() {
                 </a>
               </div>
             </div>
-          </div>
 
-          {/* Google Maps Embed */}
-          <div className="relative border border-white/10 bg-[#0c0c0c] min-h-[300px] rounded-lg overflow-hidden group">
-            
-            {/* HUD overlay top bar */}
-            <div className="absolute top-0 left-0 right-0 z-20 flex justify-between items-center font-mono text-[9px] text-zinc-500 p-4 bg-gradient-to-b from-black/70 to-transparent">
-              <span className="flex items-center gap-1 text-slate-400 uppercase"><span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-ping"></span> {t('contact.radar_online')}</span>
-              <span className="uppercase">GRID_SEC_42A</span>
-            </div>
+            {/* Google Maps Embed */}
+            <div className="relative border border-white/10 bg-[#0c0c0c] min-h-[300px] rounded-lg overflow-hidden group">
+              
+              {/* HUD overlay top bar */}
+              <div className="absolute top-0 left-0 right-0 z-20 flex justify-between items-center font-mono text-[9px] text-zinc-500 p-4 bg-gradient-to-b from-black/70 to-transparent">
+                <span className="flex items-center gap-1 text-slate-400 uppercase"><span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-ping"></span> {t('contact.radar_online')}</span>
+                <span className="uppercase">GRID_SEC_42A</span>
+              </div>
 
-            {/* Google Maps iframe */}
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3224.234!2d6.1739!3d35.5610!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDMzJzE0LjciTiA2wrAxMCczNC4yIkU!5e0!3m2!1sfr!2sdz!4v1&q=H53H%2BP83,+Rte+de+Biskra,+Batna,+Algeria"
-              className="w-full h-full min-h-[400px] border-0 transition-all duration-700"
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Mission Verse Location - Batna"
-              id="google-maps-embed"
-            ></iframe>
+              {/* Google Maps iframe */}
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3224.234!2d6.1739!3d35.5610!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDMzJzE0LjciTiA2wrAxMCczNC4yIkU!5e0!3m2!1sfr!2sdz!4v1&q=H53H%2BP83,+Rte+de+Biskra,+Batna,+Algeria"
+                className="w-full h-full min-h-[300px] border-0 transition-all duration-700"
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Mission Verse Location - Batna"
+                id="google-maps-embed"
+              ></iframe>
 
-            {/* HUD overlay bottom bar */}
-            <div className="absolute bottom-0 left-0 right-0 z-20 flex items-center justify-between border-t border-white/5 font-mono text-[9px] text-zinc-400 bg-gradient-to-t from-black/80 to-transparent p-4">
-              <span className="uppercase">{t('contact.precision')}</span>
-              <span className="text-[#0071ec] font-bold">{t('contact.stabilized')}</span>
+              {/* HUD overlay bottom bar */}
+              <div className="absolute bottom-0 left-0 right-0 z-20 flex items-center justify-between border-t border-white/5 font-mono text-[9px] text-zinc-400 bg-gradient-to-t from-black/80 to-transparent p-4">
+                <span className="uppercase">{t('contact.precision')}</span>
+                <span className="text-[#0071ec] font-bold">{t('contact.stabilized')}</span>
+              </div>
             </div>
           </div>
         </div>
@@ -127,31 +131,31 @@ export default function ContactSection() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+          <div className="grid grid-cols-3 gap-2 sm:gap-6 pt-4">
             {socialLinks.map((social) => (
               <div
                 key={social.id}
                 onClick={() => window.open(social.href, '_blank')}
-                className={`p-8 bg-[#1A1A1A] border border-white/10 rounded-lg transition-all duration-300 flex flex-col justify-between items-center text-center cursor-pointer relative overflow-hidden group ${social.color}`}
+                className={`p-3 sm:p-8 bg-[#1A1A1A] border border-white/10 rounded-lg transition-all duration-300 flex flex-col justify-between items-center text-center cursor-pointer relative overflow-hidden group ${social.color}`}
                 id={`social-card-${social.id}`}
               >
-                <div className="space-y-4">
-                  <div className="inline-flex p-4 bg-black border border-white/5 rounded-full mb-1 group-hover:scale-105 transition-transform duration-300">
-                    {social.icon}
+                <div className="space-y-2 sm:space-y-4 flex flex-col items-center">
+                  <div className="inline-flex p-2 sm:p-4 bg-black border border-white/5 rounded-full mb-1 group-hover:scale-105 transition-transform duration-300">
+                    {React.cloneElement(social.icon, { className: `${social.icon.props.className} w-5 h-5 sm:w-6 sm:h-6` })}
                   </div>
-                  <div className="space-y-1">
-                    <h3 className="font-hanken text-lg font-bold text-white tracking-tight leading-6">{social.label}</h3>
-                    <p className="font-mono text-[10px] text-zinc-500 uppercase tracking-widest">{social.handle}</p>
+                  <div className="space-y-0.5 sm:space-y-1">
+                    <h3 className="font-hanken text-[10px] sm:text-lg font-bold text-white tracking-tight leading-snug sm:leading-6">{social.label}</h3>
+                    <p className="font-mono text-[7px] sm:text-[10px] text-zinc-500 uppercase tracking-widest break-all">{social.handle}</p>
                   </div>
-                  <p className="font-sans text-xs text-zinc-400 leading-relaxed font-light mt-2 px-2">
+                  <p className="font-sans text-[8px] sm:text-xs text-zinc-400 leading-tight sm:leading-relaxed font-light mt-1 sm:mt-2 px-1 sm:px-2 line-clamp-2 sm:line-clamp-none">
                     {social.desc}
                   </p>
                 </div>
 
-                <div className="mt-8 pt-4 border-t border-white/5 w-full flex items-center justify-center gap-1 font-mono text-xs text-[#0071ec] font-semibold">
+                <div className="mt-3 sm:mt-8 pt-2 sm:pt-4 border-t border-white/5 w-full flex items-center justify-center gap-1 font-mono text-[7px] sm:text-xs text-[#0071ec] font-semibold break-all text-center">
                   {copiedText === social.label ? (
-                    <span className="text-green-500 flex items-center gap-1 font-bold">
-                      <Check size={13} /> {t('contact.copied')}
+                    <span className="text-green-500 flex items-center justify-center gap-1 font-bold">
+                      <Check size={10} className="sm:w-3 sm:h-3" /> <span className="hidden sm:inline">{t('contact.copied')}</span>
                     </span>
                   ) : (
                     <span>{social.action}</span>

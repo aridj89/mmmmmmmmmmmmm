@@ -11,7 +11,7 @@ export default function Footer({ setActiveTab }: FooterProps) {
 
   return (
     <footer className="bg-[#0e0e0e] border-t border-white/10 w-full" id="global-footer">
-      <div className="flex flex-col items-center gap-8 py-16 px-6 text-center max-w-7xl mx-auto">
+      <div className="flex flex-col items-center gap-8 pt-10 pb-8 px-6 text-center max-w-7xl mx-auto">
         
         {/* Logo and Headline */}
         <div className="space-y-4 flex flex-col items-center">

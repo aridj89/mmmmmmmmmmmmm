@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Sparkles, ArrowDown } from 'lucide-react';
+import { ArrowDown } from 'lucide-react';
 
 interface HeroProps {
   onViewPortfolio: () => void;
@@ -9,53 +9,57 @@ export default function Hero({ onViewPortfolio }: HeroProps) {
   const { t } = useTranslation();
 
   return (
-    <section 
-      className="relative min-h-[85dvh] flex flex-col justify-center px-6 md:px-16 overflow-hidden border-b border-white/5 bg-black" 
+    <section
+      className="relative min-h-[85dvh] flex flex-col justify-center items-center px-6 md:px-16 overflow-hidden border-b border-white/5 bg-black"
       id="hero-section"
     >
       {/* Dynamic Ambient Blur Core background */}
-      <div className="absolute inset-0 z-0 opacity-25">
-        <div className="absolute top-1/4 right-[10%] w-[35rem] h-[35rem] bg-[radial-gradient(circle_at_center,_#0071ec_0%,_transparent_65%)] blur-3xl rounded-full"></div>
-        <div className="absolute bottom-10 left-[5%] w-[25rem] h-[25rem] bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.05)_0%,_transparent_60%)] blur-2xl rounded-full"></div>
+      <div className="absolute inset-0 z-0 opacity-30">
+        <div className="absolute top-1/4 right-[10%] w-[35rem] h-[35rem] bg-[radial-gradient(circle_at_center,_#0071ec_0%,_transparent_65%)] blur-3xl rounded-full animate-[pulse_4s_ease-in-out_infinite]"></div>
+        <div className="absolute bottom-10 left-[5%] w-[25rem] h-[25rem] bg-[radial-gradient(circle_at_center,_rgba(0,113,236,0.15)_0%,_transparent_60%)] blur-2xl rounded-full animate-[pulse_6s_ease-in-out_infinite_1s]"></div>
       </div>
 
-      {/* Hero Content Container */}
-      <div className="relative z-10 max-w-6xl mx-auto w-full pt-16 pb-8 space-y-8 flex flex-col items-start text-left">
-        
-        {/* Big Bold Headline */}
-        <h1 className="font-hanken text-3xl sm:text-5xl md:text-7xl font-extrabold text-white leading-[1.05] tracking-tight max-w-5xl inline-flex flex-wrap items-center gap-x-2 sm:gap-x-4 gap-y-1 sm:gap-y-2">
-          <span>{t('hero.title_1')}</span>
-          <img 
-            src="/mv.jpg" 
-            alt="Mission Verse Logo" 
-            className="h-8 sm:h-16 md:h-20 w-8 sm:w-16 md:w-20 rounded-full object-cover animate-[spin_10s_linear_infinite] border border-white/20 shadow-[0_0_15px_rgba(0,113,236,0.5)]" 
+      {/* Hero Content — centered */}
+      <div className="relative z-10 flex flex-col items-center text-center space-y-10 pt-16 pb-8 w-full max-w-4xl mx-auto">
+
+        {/* Logo with animated ring */}
+        <div className="relative flex items-center justify-center">
+          {/* Outer spinning ring */}
+          <div className="absolute w-48 h-48 sm:w-64 sm:h-64 rounded-full border border-[#0071ec]/30 animate-[spin_12s_linear_infinite]">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-[#0071ec] rounded-full shadow-[0_0_10px_#0071ec]"></div>
+          </div>
+          {/* Middle pulsing ring */}
+          <div className="absolute w-36 h-36 sm:w-52 sm:h-52 rounded-full border border-white/10 animate-[pulse_3s_ease-in-out_infinite]"></div>
+          {/* Logo image */}
+          <img
+            src="/mv.jpg"
+            alt="Mission Verse Media Logo"
+            className="w-24 h-24 sm:w-36 sm:h-36 rounded-full object-cover border-2 border-[#0071ec]/60 shadow-[0_0_40px_rgba(0,113,236,0.5)] z-10"
           />
-          <span className="text-[#0071ec]">{t('hero.title_highlight')}</span> 
-          <span>{t('hero.title_2')}</span>
-        </h1>
+        </div>
 
-        {/* High-Fidelity Paragraph block */}
-        <p className="font-sans text-base sm:text-lg md:text-xl text-zinc-400 leading-relaxed max-w-3xl font-light">
-          {t('hero.description')}
-        </p>
+        {/* Brand Name */}
+        <div className="space-y-2 mt-8">
+          <h1 className="font-hanken text-4xl sm:text-6xl md:text-7xl font-extrabold text-white tracking-tight uppercase leading-none">
+            MISSION VERSE
+          </h1>
+          <p className="font-mono text-base sm:text-xl text-[#0071ec] tracking-[0.3em] uppercase font-semibold">
+            MEDIA
+          </p>
+        </div>
 
-        {/* Buttons / CTA trigger blocks */}
-        <div className="flex flex-wrap gap-4 pt-4 w-full">
-          <button 
+        {/* CTA Button */}
+        <div className="flex flex-wrap justify-center gap-4 pt-2">
+          <button
             onClick={onViewPortfolio}
-            className="px-8 py-4 border border-white/20 text-white font-mono text-xs tracking-widest uppercase hover:border-[#0071ec] hover:text-[#0071ec] transition-all duration-300 rounded-none cursor-pointer text-center"
+            className="btn font-mono text-xs tracking-widest text-center"
             id="view-portfolio-hero-btn"
           >
             {t('hero.view_portfolio')}
           </button>
         </div>
-
-        {/* Subtle scroll trigger arrow indicator */}
-        <div className="absolute bottom-8 left-0 hidden lg:flex items-center gap-2 text-zinc-600 font-mono text-[9px] uppercase tracking-widest">
-          <span>{t('hero.scroll')}</span>
-          <ArrowDown size={11} className="animate-bounce" />
-        </div>
       </div>
+
     </section>
   );
 }

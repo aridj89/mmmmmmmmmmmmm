@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -10,124 +10,247 @@ import LogoMarquee from './components/LogoMarquee';
 import ContactSection from './components/ContactSection';
 import { ActiveTab } from './types';
 import { Home, Grid, Mail, ArrowUpRight } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function App() {
   const { t, i18n } = useTranslation();
-  const [activeTab, setActiveTab] = React.useState<ActiveTab>('HOME');
+  const [activeTab, setActiveTab] = useState<ActiveTab>('HOME');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isRTL = i18n.language === 'ar';
+
+  // Lock body scroll when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMenuOpen]);
 
   // Smooth scroll to top on tab change
   const handleTabChange = (tab: ActiveTab) => {
     setActiveTab(tab);
+    setIsMenuOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  // ------------------------------------
+  // Framer Motion Variants
+  // ------------------------------------
+  
+  const menuVariants = {
+    closed: { x: isRTL ? '100%' : '-100%', transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] } },
+    open: { x: 0, transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] } }
+  };
+
+  const appWrapperVariants = {
+    closed: { 
+      scale: 1, 
+      x: 0, 
+      rotateY: 0,
+      borderRadius: '0px',
+      transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] }
+    },
+    open: { 
+      scale: 0.85, 
+      x: isRTL ? '-40%' : '40%', 
+      rotateY: isRTL ? 15 : -15,
+      borderRadius: '30px',
+      transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] }
+    }
+  };
+
+  const pageVariants = {
+    initial: { rotateY: 90, opacity: 0, scale: 0.9 },
+    animate: { rotateY: 0, opacity: 1, scale: 1, transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1] } },
+    exit: { rotateY: -90, opacity: 0, scale: 0.9, transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1] } }
+  };
+
   return (
-    <div className="min-h-screen bg-black text-[#e5e2e1] antialiased flex flex-col font-sans" id="root-app-layout" dir={isRTL ? 'rtl' : 'ltr'}>
+    <div className="bg-[#111] min-h-screen relative overflow-hidden" dir={isRTL ? 'rtl' : 'ltr'} style={{ perspective: '2000px' }}>
       
-      {/* Universal Top Bar */}
-      <Header 
-        activeTab={activeTab} 
-        setActiveTab={handleTabChange} 
-      />
+      {/* 
+        The Curved Half-Circle Menu
+        It sits fixed on the screen edge and slides in.
+      */}
+      <motion.nav 
+        variants={menuVariants}
+        initial="closed"
+        animate={isMenuOpen ? "open" : "closed"}
+        className={`fixed top-0 bottom-0 ${isRTL ? 'right-0' : 'left-0'} w-[80vw] sm:w-[50vw] md:w-[40vw] bg-[#0A0A0A] border-y border-white/5 flex flex-col justify-center items-center z-0`}
+        style={{
+          borderTopRightRadius: isRTL ? '0' : '100% 50%',
+          borderBottomRightRadius: isRTL ? '0' : '100% 50%',
+          borderTopLeftRadius: isRTL ? '100% 50%' : '0',
+          borderBottomLeftRadius: isRTL ? '100% 50%' : '0',
+          borderRight: isRTL ? 'none' : '1px solid rgba(255,255,255,0.05)',
+          borderLeft: isRTL ? '1px solid rgba(255,255,255,0.05)' : 'none',
+          boxShadow: isRTL ? '-50px 0 100px rgba(0,0,0,0.9)' : '50px 0 100px rgba(0,0,0,0.9)'
+        }}
+      >
+         <div className="flex flex-col gap-10 text-center w-full relative z-10 px-8">
+            {['HOME', 'WORK', 'CONTACT'].map((tab, i) => (
+              <motion.button
+                key={tab}
+                onClick={() => handleTabChange(tab as ActiveTab)}
+                initial={{ opacity: 0, x: isRTL ? 50 : -50, scale: 0.8 }}
+                animate={isMenuOpen ? { opacity: 1, x: 0, scale: 1 } : { opacity: 0, x: isRTL ? 50 : -50, scale: 0.8 }}
+                transition={{ delay: isMenuOpen ? 0.3 + (i * 0.1) : 0, duration: 0.5, type: 'spring', bounce: 0.4 }}
+                className={`font-hanken text-2xl sm:text-4xl font-black uppercase tracking-tighter transition-all duration-300 hover:scale-110 origin-center ${activeTab === tab ? 'text-[#0071ec]' : 'text-zinc-500 hover:text-white'}`}
+              >
+                {t(`nav.${tab.toLowerCase()}`)}
+              </motion.button>
+            ))}
+         </div>
+      </motion.nav>
 
-      {/* Primary Context Container */}
-      <main className="flex-grow pt-16 pb-24 md:pb-16" id="primary-main-viewport">
-        
-        {/* View Switcher with animations/transitions */}
-        {activeTab === 'HOME' && (
-          <div className="animate-fade-in shrink-0" id="home-view">
-            <Hero 
-              onViewPortfolio={() => handleTabChange('WORK')}
-            />
-            
-            <TeamSection />
-
-            {/* In-view Core CTA Banner */}
-            <section className="py-24 px-6 md:px-16 text-center border-t border-white/5 bg-black">
-              <div className="max-w-4xl mx-auto space-y-8">
-                <h2 className="font-hanken text-4xl sm:text-6xl font-extrabold text-white tracking-tight uppercase leading-none">
-                  {t('cta.title')}
-                </h2>
-                <div className="flex justify-center pt-2">
-                  <button 
-                    onClick={() => handleTabChange('CONTACT')}
-                    className="flex items-center gap-3 px-10 py-5 bg-white text-black font-hanken text-lg md:text-xl font-extrabold hover:bg-[#0071ec] hover:text-white transition-all duration-300 rounded-none shadow-lg shadow-white/3"
-                    id="connect-cta-btn"
-                  >
-                    {t('cta.button')} <ArrowUpRight size={22} className="stroke-[2.5px]" />
-                  </button>
-                </div>
-              </div>
-            </section>
-          </div>
+      {/* 
+        Main App Wrapper
+        This holds the entire original app, applying 3D transforms when menu is open.
+      */}
+      <motion.div 
+        variants={appWrapperVariants}
+        initial="closed"
+        animate={isMenuOpen ? "open" : "closed"}
+        className="min-h-screen bg-black text-[#e5e2e1] antialiased flex flex-col font-sans relative z-10 shadow-[0_0_100px_rgba(0,0,0,1)] origin-center"
+        style={{ 
+          transformOrigin: isRTL ? 'right center' : 'left center',
+          height: isMenuOpen ? '100vh' : 'auto',
+          overflow: isMenuOpen ? 'hidden' : 'visible'
+        }}
+      >
+        {/* Overlay to catch clicks and close menu when clicking main body */}
+        {isMenuOpen && (
+          <div 
+            className="absolute inset-0 z-[60] bg-black/20 backdrop-blur-[2px] cursor-pointer" 
+            onClick={() => setIsMenuOpen(false)} 
+          />
         )}
 
-        {activeTab === 'WORK' && (
-          <div className="animate-fade-in shrink-0" id="work-view">
-            {/* Header / Intro section for Work view */}
-            <section className="px-6 md:px-16 py-16 md:py-24 border-b border-white/5 bg-black">
-              <div className="max-w-7xl mx-auto space-y-4">
-                <span className="font-mono text-xs text-[#0071ec] tracking-widest block font-semibold uppercase">{t('work.label')}</span>
-                <h1 className="font-hanken text-4xl sm:text-7xl font-extrabold text-white uppercase leading-none tracking-tight">
-                  {t('work.title_1')} <span className="text-zinc-500">{t('work.title_2')}</span>
-                </h1>
-              </div>
-            </section>
+        {/* Universal Top Bar */}
+        <Header 
+          activeTab={activeTab} 
+          setActiveTab={handleTabChange} 
+          isMenuOpen={isMenuOpen}
+          setIsMenuOpen={setIsMenuOpen}
+        />
 
-            <LogoMarquee />
+        {/* Primary Context Container */}
+        <main className="flex-grow pt-16 pb-8" id="primary-main-viewport" style={{ perspective: '1500px' }}>
+          
+          <AnimatePresence mode="wait">
+            {activeTab === 'HOME' && (
+              <motion.div 
+                key="home" 
+                variants={pageVariants} 
+                initial="initial" 
+                animate="animate" 
+                exit="exit" 
+                className="origin-center" 
+                style={{ transformStyle: 'preserve-3d' }}
+              >
+                <Hero 
+                  onViewPortfolio={() => {
+                    handleTabChange('WORK');
+                  }}
+                />
 
-            <ReelShowcase />
-          </div>
-        )}
+                <LogoMarquee />
 
-        {activeTab === 'CONTACT' && (
-          <div className="animate-fade-in shrink-0" id="contact-view">
-            <ContactSection />
-          </div>
-        )}
+                <ReelShowcase />
 
-      </main>
+                {/* In-view Core CTA Banner */}
+                <section className="py-24 px-6 md:px-16 text-center border-t border-white/5 bg-black">
+                  <div className="max-w-4xl mx-auto space-y-8">
+                    <h2 className="font-hanken text-4xl sm:text-6xl font-extrabold text-white tracking-tight uppercase leading-none">
+                      {t('cta.title')}
+                    </h2>
+                    <div className="flex justify-center pt-2">
+                      <button 
+                        onClick={() => handleTabChange('CONTACT')}
+                        className="btn flex items-center justify-center gap-3 font-hanken"
+                        id="connect-cta-btn"
+                      >
+                        {t('cta.button')} <ArrowUpRight size={22} className="stroke-[2.5px]" />
+                      </button>
+                    </div>
+                  </div>
+                </section>
+              </motion.div>
+            )}
 
-      {/* Universal Footer */}
-      <Footer setActiveTab={handleTabChange} />
+            {activeTab === 'WORK' && (
+              <motion.div 
+                key="work" 
+                variants={pageVariants} 
+                initial="initial" 
+                animate="animate" 
+                exit="exit" 
+                className="origin-center min-h-[80vh]" 
+                style={{ transformStyle: 'preserve-3d' }}
+              >
+                <TeamSection />
+              </motion.div>
+            )}
 
-      {/* Bottom Nav Bar (Mobile Only Viewport) */}
-      <nav className="md:hidden fixed bottom-0 left-0 w-full bg-black/90 backdrop-blur-xl border-t border-white/10 flex justify-around items-center h-20 pb-safe z-40" id="mobile-bottom-navbar">
-        <button 
-          onClick={() => handleTabChange('HOME')}
-          className={`flex flex-col items-center justify-center gap-1 w-20 py-1 transition-all ${
-            activeTab === 'HOME' ? 'text-white' : 'text-zinc-500 hover:text-zinc-300'
-          }`}
-          id="mobile-nav-home"
-        >
-          <Home size={18} />
-          <span className="font-mono text-[8px] tracking-widest font-semibold">{t('nav.home')}</span>
-        </button>
+            {activeTab === 'CONTACT' && (
+              <motion.div 
+                key="contact" 
+                variants={pageVariants} 
+                initial="initial" 
+                animate="animate" 
+                exit="exit" 
+                className="origin-center min-h-[80vh]" 
+                style={{ transformStyle: 'preserve-3d' }}
+              >
+                <ContactSection />
+              </motion.div>
+            )}
+          </AnimatePresence>
 
-        <button 
-          onClick={() => handleTabChange('WORK')}
-          className={`flex flex-col items-center justify-center gap-1 w-20 py-1 transition-all ${
-            activeTab === 'WORK' ? 'text-white' : 'text-zinc-500 hover:text-zinc-300'
-          }`}
-          id="mobile-nav-work"
-        >
-          <Grid size={18} />
-          <span className="font-mono text-[8px] tracking-widest font-semibold">{t('nav.work')}</span>
-        </button>
+        </main>
 
-        <button 
-          onClick={() => handleTabChange('CONTACT')}
-          className={`flex flex-col items-center justify-center gap-1 w-20 py-1 transition-all ${
-            activeTab === 'CONTACT' ? 'text-white' : 'text-zinc-500 hover:text-zinc-300'
-          }`}
-          id="mobile-nav-contact"
-        >
-          <Mail size={18} />
-          <span className="font-mono text-[8px] tracking-widest font-semibold">{t('nav.contact')}</span>
-        </button>
-      </nav>
+        {/* Universal Footer */}
+        <Footer setActiveTab={handleTabChange} />
 
+        {/* Bottom Nav Bar (Mobile Only Viewport) */}
+        <nav className="md:hidden fixed bottom-0 left-0 w-full bg-black/90 backdrop-blur-xl border-t border-white/10 flex justify-around items-center h-20 pb-safe z-40" id="mobile-bottom-navbar">
+          <button 
+            onClick={() => handleTabChange('HOME')}
+            className={`flex flex-col items-center justify-center gap-1 w-20 py-1 transition-all ${
+              activeTab === 'HOME' ? 'text-white' : 'text-zinc-500 hover:text-zinc-300'
+            }`}
+          >
+            <Home size={18} />
+            <span className="font-mono text-[8px] tracking-widest font-semibold">{t('nav.home')}</span>
+          </button>
+
+          <button 
+            onClick={() => handleTabChange('WORK')}
+            className={`flex flex-col items-center justify-center gap-1 w-20 py-1 transition-all ${
+              activeTab === 'WORK' ? 'text-white' : 'text-zinc-500 hover:text-zinc-300'
+            }`}
+          >
+            <Grid size={18} />
+            <span className="font-mono text-[8px] tracking-widest font-semibold">{t('nav.work')}</span>
+          </button>
+
+          <button 
+            onClick={() => handleTabChange('CONTACT')}
+            className={`flex flex-col items-center justify-center gap-1 w-20 py-1 transition-all ${
+              activeTab === 'CONTACT' ? 'text-white' : 'text-zinc-500 hover:text-zinc-300'
+            }`}
+          >
+            <Mail size={18} />
+            <span className="font-mono text-[8px] tracking-widest font-semibold">{t('nav.contact')}</span>
+          </button>
+        </nav>
+
+      </motion.div>
+      
     </div>
   );
 }
