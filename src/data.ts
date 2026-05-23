@@ -78,8 +78,7 @@ export const REEL_CATEGORIES = [
   { id: 'dentist', label: 'DENTIST', subtitle: 'Cliniques Dentaires' },
   { id: 'esthetique', label: 'ESTHÉTIQUE', subtitle: 'Dermatologie & Soins' },
   { id: 'pharmacie', label: 'PHARMACIE', subtitle: 'Medical For Pharmacy' },
-  { id: 'evenement', label: 'ÉVÉNEMENT', subtitle: 'Couverture d\'événements' },
-  { id: 'other', label: 'OTHER', subtitle: 'Autre' },
+  { id: 'evenement', label: 'ÉVÉNEMENT', subtitle: 'Couverture d\'événements' }
 ];
 
 export const REELS: Reel[] = [
@@ -115,11 +114,7 @@ export const REELS: Reel[] = [
   // Événement
   { id: 'ev-1', category: 'evenement', title: 'EVENT 01', videoUrl: '/videos/ev1.mp4' },
   { id: 'ev-2', category: 'evenement', title: 'EVENT 02', videoUrl: '/videos/ev2.mp4' },
-  { id: 'ev-3', category: 'evenement', title: 'EVENT 03', videoUrl: '/videos/ev3.mp4' },
-
-  // Other
-  { id: 'other-1', category: 'other', title: 'OTHER 01', videoUrl: '/videos/1.mp4' },
-  { id: 'other-2', category: 'other', title: 'OTHER 02', videoUrl: '/videos/2.mp4' },
+  { id: 'ev-3', category: 'evenement', title: 'EVENT 03', videoUrl: '/videos/ev3.mp4' }
 ];
 
 export const BENTO_PROJECTS: BentoProject[] = [

@@ -9,8 +9,7 @@ const CATEGORY_COLORS: Record<string, string> = {
   dentist: 'from-blue-600/20 to-cyan-600/20 border-blue-500/30',
   esthetique: 'from-rose-600/20 to-orange-600/20 border-rose-500/30',
   pharmacie: 'from-green-600/20 to-teal-600/20 border-green-500/30',
-  evenement: 'from-fuchsia-600/20 to-purple-600/20 border-fuchsia-500/30',
-  other: 'from-rose-600/20 to-orange-600/20 border-rose-500/30',
+  evenement: 'from-fuchsia-600/20 to-purple-600/20 border-fuchsia-500/30'
 };
 
 const CATEGORY_PILL_COLORS: Record<string, string> = {
@@ -18,8 +17,7 @@ const CATEGORY_PILL_COLORS: Record<string, string> = {
   dentist: 'bg-blue-600 hover:bg-blue-500',
   esthetique: 'bg-rose-600 hover:bg-rose-500',
   pharmacie: 'bg-green-600 hover:bg-green-500',
-  evenement: 'bg-fuchsia-600 hover:bg-fuchsia-500',
-  other: 'bg-rose-600 hover:bg-rose-500',
+  evenement: 'bg-fuchsia-600 hover:bg-fuchsia-500'
 };
 
 export default function ReelShowcase() {
@@ -144,10 +142,6 @@ export default function ReelShowcase() {
               themeClass = isActive 
                 ? 'bg-fuchsia-500/10 border-fuchsia-500 text-fuchsia-400 shadow-[0_0_15px_rgba(217,70,239,0.3)]'
                 : 'bg-[#1A1A1A] border-white/10 text-zinc-400 hover:border-fuchsia-500/50 hover:text-fuchsia-400';
-            } else if (cat.id === 'other') {
-              themeClass = isActive 
-                ? 'bg-rose-500/10 border-rose-500 text-rose-400 shadow-[0_0_15px_rgba(244,63,94,0.3)]'
-                : 'bg-[#1A1A1A] border-white/10 text-zinc-400 hover:border-rose-500/50 hover:text-rose-400';
             }
             
             return (
