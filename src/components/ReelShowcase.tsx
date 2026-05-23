@@ -9,7 +9,8 @@ const CATEGORY_COLORS: Record<string, string> = {
   dentist: 'from-blue-600/20 to-cyan-600/20 border-blue-500/30',
   esthetique: 'from-rose-600/20 to-orange-600/20 border-rose-500/30',
   pharmacie: 'from-green-600/20 to-teal-600/20 border-green-500/30',
-  evenement: 'from-fuchsia-600/20 to-purple-600/20 border-fuchsia-500/30'
+  evenement: 'from-fuchsia-600/20 to-purple-600/20 border-fuchsia-500/30',
+  other: 'from-rose-600/20 to-orange-600/20 border-rose-500/30',
 };
 
 const CATEGORY_PILL_COLORS: Record<string, string> = {
@@ -17,13 +18,14 @@ const CATEGORY_PILL_COLORS: Record<string, string> = {
   dentist: 'bg-blue-600 hover:bg-blue-500',
   esthetique: 'bg-rose-600 hover:bg-rose-500',
   pharmacie: 'bg-green-600 hover:bg-green-500',
-  evenement: 'bg-fuchsia-600 hover:bg-fuchsia-500'
+  evenement: 'bg-fuchsia-600 hover:bg-fuchsia-500',
+  other: 'bg-rose-600 hover:bg-rose-500',
 };
 
 export default function ReelShowcase() {
   const { t } = useTranslation();
   const [activeCategory, setActiveCategory] = useState<string>('all');
-  
+
   // Carousel State
   const [carouselIndex, setCarouselIndex] = useState(0);
   const [isCarouselHovered, setIsCarouselHovered] = useState(false);
@@ -32,7 +34,7 @@ export default function ReelShowcase() {
   // Center Video State
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
-  
+
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const filteredReels = activeCategory === 'all'
@@ -52,7 +54,7 @@ export default function ReelShowcase() {
   useEffect(() => {
     if (videoRef.current) {
       if (isPlaying) {
-        videoRef.current.play().catch(() => {});
+        videoRef.current.play().catch(() => { });
       } else {
         videoRef.current.pause();
       }
@@ -95,7 +97,7 @@ export default function ReelShowcase() {
   return (
     <section className="bg-black text-[#e5e2e1] py-16 px-4 md:px-12 overflow-hidden" id="reel-showcase-section">
       <div className="max-w-7xl mx-auto space-y-12 relative z-10">
-      
+
         {/* Header */}
         <div className="text-center space-y-4">
           <h2 className="font-hanken text-4xl sm:text-6xl font-extrabold text-white tracking-tight uppercase">
@@ -110,40 +112,47 @@ export default function ReelShowcase() {
         <div className="flex flex-wrap justify-center gap-3">
           <button
             onClick={() => { setActiveCategory('all'); setCarouselIndex(0); setIsPlaying(true); }}
-            className={`px-6 py-2.5 rounded-full font-mono text-xs uppercase font-bold transition-all duration-300 border ${
-              activeCategory === 'all'
-                ? 'bg-[#0071ec]/10 border-[#0071ec] text-[#0071ec] shadow-[0_0_15px_rgba(0,113,236,0.3)]'
-                : 'bg-[#1A1A1A] border-white/10 text-zinc-400 hover:border-[#0071ec]/50 hover:text-[#0071ec]'
-            }`}
+            className={`px-6 py-2.5 rounded-full font-mono text-xs uppercase font-bold transition-all duration-300 border ${activeCategory === 'all'
+              ? 'bg-[#0071ec]/10 border-[#0071ec] text-[#0071ec] shadow-[0_0_15px_rgba(0,113,236,0.3)]'
+              : 'bg-[#1A1A1A] border-white/10 text-zinc-400 hover:border-[#0071ec]/50 hover:text-[#0071ec]'
+              }`}
           >
             {t('reel_categories.all', 'ALL')}
           </button>
           {REEL_CATEGORIES.map(cat => {
             const isActive = activeCategory === cat.id;
             let themeClass = '';
-            
+
             if (cat.id === 'ugc') {
-              themeClass = isActive 
+              themeClass = isActive
                 ? 'bg-purple-500/10 border-purple-500 text-purple-400 shadow-[0_0_15px_rgba(168,85,247,0.3)]'
                 : 'bg-[#1A1A1A] border-white/10 text-zinc-400 hover:border-purple-500/50 hover:text-purple-400';
             } else if (cat.id === 'dentist') {
-              themeClass = isActive 
+              themeClass = isActive
                 ? 'bg-blue-500/10 border-blue-500 text-blue-400 shadow-[0_0_15px_rgba(59,130,246,0.3)]'
                 : 'bg-[#1A1A1A] border-white/10 text-zinc-400 hover:border-blue-500/50 hover:text-blue-400';
             } else if (cat.id === 'esthetique') {
-              themeClass = isActive 
+              themeClass = isActive
                 ? 'bg-rose-500/10 border-rose-500 text-rose-400 shadow-[0_0_15px_rgba(244,63,94,0.3)]'
                 : 'bg-[#1A1A1A] border-white/10 text-zinc-400 hover:border-rose-500/50 hover:text-rose-400';
             } else if (cat.id === 'pharmacie') {
-              themeClass = isActive 
+              themeClass = isActive
                 ? 'bg-green-500/10 border-green-500 text-green-400 shadow-[0_0_15px_rgba(34,197,94,0.3)]'
                 : 'bg-[#1A1A1A] border-white/10 text-zinc-400 hover:border-green-500/50 hover:text-green-400';
             } else if (cat.id === 'evenement') {
-              themeClass = isActive 
+              themeClass = isActive
                 ? 'bg-fuchsia-500/10 border-fuchsia-500 text-fuchsia-400 shadow-[0_0_15px_rgba(217,70,239,0.3)]'
                 : 'bg-[#1A1A1A] border-white/10 text-zinc-400 hover:border-fuchsia-500/50 hover:text-fuchsia-400';
+            } else if (cat.id === 'other') {
+              themeClass = isActive
+                ? 'bg-rose-500/10 border-rose-500 text-rose-400 shadow-[0_0_15px_rgba(244,63,94,0.3)]'
+                : 'bg-[#1A1A1A] border-white/10 text-zinc-400 hover:border-rose-500/50 hover:text-rose-400';
+            } else if (cat.id === 'other') {
+              themeClass = isActive
+                ? 'bg-rose-500/10 border-rose-500 text-rose-400 shadow-[0_0_15px_rgba(244,63,94,0.3)]'
+                : 'bg-[#1A1A1A] border-white/10 text-zinc-400 hover:border-rose-500/50 hover:text-rose-400';
             }
-            
+
             return (
               <button
                 key={cat.id}
@@ -157,7 +166,7 @@ export default function ReelShowcase() {
         </div>
 
         {/* Dynamic Display: 3D Carousel for ALL categories */}
-        <div 
+        <div
           className="relative h-[500px] sm:h-[600px] w-full max-w-5xl mx-auto [perspective:1000px] flex items-center justify-center"
           onMouseEnter={() => setIsCarouselHovered(true)}
           onMouseLeave={() => setIsCarouselHovered(false)}
@@ -165,7 +174,7 @@ export default function ReelShowcase() {
           onTouchEnd={handleCarouselTouchEnd}
         >
           {/* Carousel Controls */}
-          <button 
+          <button
             onClick={() => {
               setCarouselIndex((prev) => (prev - 1 + filteredReels.length) % filteredReels.length);
               setIsPlaying(true);
@@ -175,7 +184,7 @@ export default function ReelShowcase() {
             <ChevronLeft size={24} className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
 
-          <button 
+          <button
             onClick={() => {
               setCarouselIndex((prev) => (prev + 1) % filteredReels.length);
               setIsPlaying(true);
@@ -200,7 +209,7 @@ export default function ReelShowcase() {
             const scale = isCenter ? 1 : (isMobile ? 0.85 : 0.8);
             const zIndex = 10 - Math.abs(diff);
             const opacity = isCenter ? 1 : Math.abs(diff) === 1 ? (isMobile ? 0.8 : 0.6) : 0;
-            
+
             const colorClass = CATEGORY_COLORS[reel.category] || 'from-zinc-600/20 to-zinc-600/20 border-zinc-500/30';
 
             return (
@@ -232,7 +241,7 @@ export default function ReelShowcase() {
                   preload="metadata"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent pointer-events-none" />
-                
+
                 {/* Play/Pause Overlay */}
                 {isCenter && !isPlaying && (
                   <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
@@ -244,7 +253,7 @@ export default function ReelShowcase() {
 
                 {/* Sound Toggle Button */}
                 {isCenter && (
-                  <button 
+                  <button
                     onClick={(e) => {
                       e.stopPropagation();
                       toggleMute();

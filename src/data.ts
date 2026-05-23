@@ -78,16 +78,18 @@ export const REEL_CATEGORIES = [
   { id: 'dentist', label: 'DENTIST', subtitle: 'Cliniques Dentaires' },
   { id: 'esthetique', label: 'ESTHÉTIQUE', subtitle: 'Dermatologie & Soins' },
   { id: 'pharmacie', label: 'PHARMACIE', subtitle: 'Medical For Pharmacy' },
-  { id: 'evenement', label: 'ÉVÉNEMENT', subtitle: 'Couverture d\'événements' }
+  { id: 'evenement', label: 'ÉVÉNEMENT', subtitle: 'Couverture d\'événements' },
 ];
 
 export const REELS: Reel[] = [
   // UGC
-  { id: 'ugc-01', category: 'ugc', title: 'UGC 01', videoUrl: '/videos/01.MP4' },
-  { id: 'ugc-02', category: 'ugc', title: 'UGC 02', videoUrl: '/videos/02.MP4' },
-  { id: 'ugc-03', category: 'ugc', title: 'UGC 03', videoUrl: '/videos/03.mp4' },
-  { id: 'ugc-04', category: 'ugc', title: 'UGC 04', videoUrl: '/videos/04.mp4' },
-  { id: 'ugc-05', category: 'ugc', title: 'UGC 05', videoUrl: '/videos/05.mp4' },
+  { id: 'ugc-01', category: 'ugc', title: 'UGC 01', videoUrl: '/videos/1.MP4' },
+  { id: 'ugc-02', category: 'ugc', title: 'UGC 02', videoUrl: '/videos/2.mp4' },
+  { id: 'ugc-03', category: 'ugc', title: 'UGC 03', videoUrl: '/videos/3.mp4' },
+  { id: 'ugc-04', category: 'ugc', title: 'UGC 04', videoUrl: '/videos/4.MP4' },
+  { id: 'ugc-05', category: 'ugc', title: 'UGC 05', videoUrl: '/videos/5.mp4' },
+  { id: 'ugc-06', category: 'ugc', title: 'UGC 06', videoUrl: '/videos/6.mp4' },
+  { id: 'ugc-07', category: 'ugc', title: 'UGC 07', videoUrl: '/videos/7.MP4' },
 
   // Dentist
   { id: 'dent-1', category: 'dentist', title: 'DENTIST 01', videoUrl: '/videos/D1.mp4' },
@@ -95,7 +97,7 @@ export const REELS: Reel[] = [
   { id: 'dent-3', category: 'dentist', title: 'DENTIST 03', videoUrl: '/videos/D3.mp4' },
   { id: 'dent-4', category: 'dentist', title: 'DENTIST 04', videoUrl: '/videos/D4.mp4' },
   { id: 'dent-5', category: 'dentist', title: 'DENTIST 05', videoUrl: '/videos/D5.mp4' },
-  { id: 'dent-6', category: 'dentist', title: 'DENTIST 06', videoUrl: '/videos/D6.mov' },
+  { id: 'dent-6', category: 'dentist', title: 'DENTIST 06', videoUrl: '/videos/D6.mp4' },
   { id: 'dent-7', category: 'dentist', title: 'DENTIST 07', videoUrl: '/videos/D7.mp4' },
   { id: 'dent-8', category: 'dentist', title: 'DENTIST 08', videoUrl: '/videos/D8.mp4' },
   { id: 'dent-9', category: 'dentist', title: 'DENTIST 09', videoUrl: '/videos/D9.mp4' },
@@ -104,17 +106,18 @@ export const REELS: Reel[] = [
   { id: 'derma-1', category: 'esthetique', title: 'DERMA 01', videoUrl: '/videos/derma1.mp4' },
   { id: 'derma-2', category: 'esthetique', title: 'DERMA 02', videoUrl: '/videos/derma2.mp4' },
   { id: 'derma-3', category: 'esthetique', title: 'DERMA 03', videoUrl: '/videos/derma3.mp4' },
+  { id: 'derma-4', category: 'esthetique', title: 'DERMA 04', videoUrl: '/videos/derma4.mp4' },
 
   // Pharmacie
   { id: 'ph-1', category: 'pharmacie', title: 'PHARMA 01', videoUrl: '/videos/ph1.mp4' },
-  { id: 'ph-2', category: 'pharmacie', title: 'PHARMA 02', videoUrl: '/videos/ph2.MP4' },
-  { id: 'ph-3', category: 'pharmacie', title: 'PHARMA 03', videoUrl: '/videos/ph3.mp4' },
-  { id: 'ph-4', category: 'pharmacie', title: 'PHARMA 04', videoUrl: '/videos/ph4.mp4' },
+  { id: 'ph-2', category: 'pharmacie', title: 'PHARMA 02', videoUrl: '/videos/ph2.mp4' },
+  { id: 'ph-3', category: 'pharmacie', title: 'PHARMA 03', videoUrl: '/videos/ph3.MP4' },
+  { id: 'ph-4', category: 'pharmacie', title: 'PHARMA 04', videoUrl: '/videos/ph04.mp4' },
 
   // Événement
-  { id: 'ev-1', category: 'evenement', title: 'EVENT 01', videoUrl: '/videos/ev1.mp4' },
-  { id: 'ev-2', category: 'evenement', title: 'EVENT 02', videoUrl: '/videos/ev2.mp4' },
-  { id: 'ev-3', category: 'evenement', title: 'EVENT 03', videoUrl: '/videos/ev3.mp4' }
+  { id: 'ev-1', category: 'evenement', title: 'EVENT 01', videoUrl: '/videos/eve1.mp4' },
+  { id: 'ev-2', category: 'evenement', title: 'EVENT 02', videoUrl: '/videos/eve2.mp4' },
+  { id: 'ev-3', category: 'evenement', title: 'EVENT 03', videoUrl: '/videos/eve3.mp4' },
 ];
 
 export const BENTO_PROJECTS: BentoProject[] = [
