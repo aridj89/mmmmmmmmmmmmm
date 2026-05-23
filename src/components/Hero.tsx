@@ -11,7 +11,7 @@ interface HeroProps {
 export default function Hero({ onViewPortfolio, logoIndex, rotation }: HeroProps) {
   const { t } = useTranslation();
 
-  const logos = ['/mv.jpg', '/Ve.png'];
+  const logos = ['/logo.jpg', '/Ve.png'];
   const brandNames = ['MISSION VERSE', 'VEXA'];
 
   return (

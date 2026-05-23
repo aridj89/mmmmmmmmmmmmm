@@ -23,7 +23,7 @@ export default function Header({ activeTab, setActiveTab, isMenuOpen, setIsMenuO
   const [langDropdownOpen, setLangDropdownOpen] = React.useState(false);
   const langRef = React.useRef<HTMLDivElement>(null);
   
-  const logos = ['/mv.jpg', '/Ve.png'];
+  const logos = ['/logo.jpg', '/Ve.png'];
   const brandNames = ['MISSION VERSE', 'VEXA'];
 
   const navItems: { key: ActiveTab; labelKey: string }[] = [

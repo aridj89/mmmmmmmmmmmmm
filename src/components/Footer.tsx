@@ -12,7 +12,7 @@ export default function Footer({ setActiveTab, logoIndex, rotation }: FooterProp
   const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
-  const logos = ['/mv.jpg', '/Ve.png'];
+  const logos = ['/logo.jpg', '/Ve.png'];
   const brandNames = ['MISSION VERSE', 'VEXA'];
 
   return (
