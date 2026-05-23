@@ -63,6 +63,13 @@ export const TEAM_MEMBERS: TeamMember[] = [
     role: 'UGC CONTENT CREATOR',
     category: 'DESIGN',
     imageUrl: '/team/dikra.jpg'
+  },
+  {
+    id: 'kawtar-ali-dahmane',
+    name: 'KAWTAR ALI DAHMANE',
+    role: 'MARKETING STRATEGY & BRAND COMMUNICATION',
+    category: 'MARKETING',
+    imageUrl: '/team/kawthar.jpg'
   }
 ];
 
@@ -71,7 +78,8 @@ export const REEL_CATEGORIES = [
   { id: 'dentist', label: 'DENTIST', subtitle: 'Cliniques Dentaires' },
   { id: 'esthetique', label: 'ESTHÉTIQUE', subtitle: 'Dermatologie & Soins' },
   { id: 'pharmacie', label: 'PHARMACIE', subtitle: 'Medical For Pharmacy' },
-  { id: 'orthophonia', label: 'ORTHOPHONIA', subtitle: 'Cabinet Orthophonie' },
+  { id: 'evenement', label: 'ÉVÉNEMENT', subtitle: 'Couverture d\'événements' },
+  { id: 'other', label: 'OTHER', subtitle: 'Autre' },
 ];
 
 export const REELS: Reel[] = [
@@ -96,6 +104,7 @@ export const REELS: Reel[] = [
   // Esthétique
   { id: 'derma-1', category: 'esthetique', title: 'DERMA 01', videoUrl: '/videos/derma1.mp4' },
   { id: 'derma-2', category: 'esthetique', title: 'DERMA 02', videoUrl: '/videos/derma2.mp4' },
+  { id: 'derma-3', category: 'esthetique', title: 'DERMA 03', videoUrl: '/videos/derma3.mp4' },
 
   // Pharmacie
   { id: 'ph-1', category: 'pharmacie', title: 'PHARMA 01', videoUrl: '/videos/ph1.mp4' },
@@ -103,8 +112,14 @@ export const REELS: Reel[] = [
   { id: 'ph-3', category: 'pharmacie', title: 'PHARMA 03', videoUrl: '/videos/ph3.mp4' },
   { id: 'ph-4', category: 'pharmacie', title: 'PHARMA 04', videoUrl: '/videos/ph4.mp4' },
 
-  // Orthophonia
-  { id: 'orto-1', category: 'orthophonia', title: 'ORTHO 01', videoUrl: '/videos/orto1.mp4' },
+  // Événement
+  { id: 'ev-1', category: 'evenement', title: 'EVENT 01', videoUrl: '/videos/ev1.mp4' },
+  { id: 'ev-2', category: 'evenement', title: 'EVENT 02', videoUrl: '/videos/ev2.mp4' },
+  { id: 'ev-3', category: 'evenement', title: 'EVENT 03', videoUrl: '/videos/ev3.mp4' },
+
+  // Other
+  { id: 'other-1', category: 'other', title: 'OTHER 01', videoUrl: '/videos/1.mp4' },
+  { id: 'other-2', category: 'other', title: 'OTHER 02', videoUrl: '/videos/2.mp4' },
 ];
 
 export const BENTO_PROJECTS: BentoProject[] = [

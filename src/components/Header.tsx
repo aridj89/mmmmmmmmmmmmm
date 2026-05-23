@@ -8,6 +8,8 @@ interface HeaderProps {
   setActiveTab: (tab: ActiveTab) => void;
   isMenuOpen: boolean;
   setIsMenuOpen: (open: boolean) => void;
+  logoIndex: number;
+  rotation: number;
 }
 
 const LANGUAGES = [
@@ -16,10 +18,13 @@ const LANGUAGES = [
   { code: 'ar', label: 'AR', full: 'العربية' }
 ];
 
-export default function Header({ activeTab, setActiveTab, isMenuOpen, setIsMenuOpen }: HeaderProps) {
+export default function Header({ activeTab, setActiveTab, isMenuOpen, setIsMenuOpen, logoIndex, rotation }: HeaderProps) {
   const { t, i18n } = useTranslation();
   const [langDropdownOpen, setLangDropdownOpen] = React.useState(false);
   const langRef = React.useRef<HTMLDivElement>(null);
+  
+  const logos = ['/mv.jpg', '/Ve.png'];
+  const brandNames = ['MISSION VERSE', 'VEXA'];
 
   const navItems: { key: ActiveTab; labelKey: string }[] = [
     { key: 'HOME', labelKey: 'nav.home' },
@@ -64,8 +69,17 @@ export default function Header({ activeTab, setActiveTab, isMenuOpen, setIsMenuO
             className="flex items-center gap-2 hover:opacity-90 transition-opacity"
             id="logo-button"
           >
-            <img src="/logo.jpg" alt="Mission Verse" className="w-8 h-8 rounded-sm object-cover" />
-            <span className="font-hanken font-extrabold tracking-tighter text-lg md:text-xl text-white">MISSION VERSE</span>
+            <div className="transition-transform duration-700 ease-in-out [perspective:1000px]" style={{ transform: `rotateY(${rotation}deg)` }}>
+              <img src={logos[logoIndex]} alt="Mission Verse" className="w-8 h-8 rounded-sm object-cover transition-opacity duration-300" />
+            </div>
+            <div className="[perspective:1000px]">
+              <span 
+                className="font-hanken font-extrabold tracking-tighter text-lg md:text-xl text-white uppercase transition-transform duration-700 ease-in-out block"
+                style={{ transform: `rotateX(${rotation}deg)` }}
+              >
+                {brandNames[logoIndex]}
+              </span>
+            </div>
           </button>
         </div>
 

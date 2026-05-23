@@ -9,7 +9,8 @@ const CATEGORY_COLORS: Record<string, string> = {
   dentist: 'from-blue-600/20 to-cyan-600/20 border-blue-500/30',
   esthetique: 'from-rose-600/20 to-orange-600/20 border-rose-500/30',
   pharmacie: 'from-green-600/20 to-teal-600/20 border-green-500/30',
-  orthophonia: 'from-yellow-600/20 to-amber-600/20 border-yellow-500/30',
+  evenement: 'from-fuchsia-600/20 to-purple-600/20 border-fuchsia-500/30',
+  other: 'from-rose-600/20 to-orange-600/20 border-rose-500/30',
 };
 
 const CATEGORY_PILL_COLORS: Record<string, string> = {
@@ -17,7 +18,8 @@ const CATEGORY_PILL_COLORS: Record<string, string> = {
   dentist: 'bg-blue-600 hover:bg-blue-500',
   esthetique: 'bg-rose-600 hover:bg-rose-500',
   pharmacie: 'bg-green-600 hover:bg-green-500',
-  orthophonia: 'bg-amber-600 hover:bg-amber-500',
+  evenement: 'bg-fuchsia-600 hover:bg-fuchsia-500',
+  other: 'bg-rose-600 hover:bg-rose-500',
 };
 
 export default function ReelShowcase() {
@@ -116,7 +118,7 @@ export default function ReelShowcase() {
                 : 'bg-[#1A1A1A] border-white/10 text-zinc-400 hover:border-[#0071ec]/50 hover:text-[#0071ec]'
             }`}
           >
-            ALL
+            {t('reel_categories.all', 'ALL')}
           </button>
           {REEL_CATEGORIES.map(cat => {
             const isActive = activeCategory === cat.id;
@@ -138,10 +140,14 @@ export default function ReelShowcase() {
               themeClass = isActive 
                 ? 'bg-green-500/10 border-green-500 text-green-400 shadow-[0_0_15px_rgba(34,197,94,0.3)]'
                 : 'bg-[#1A1A1A] border-white/10 text-zinc-400 hover:border-green-500/50 hover:text-green-400';
-            } else if (cat.id === 'orthophonia') {
+            } else if (cat.id === 'evenement') {
               themeClass = isActive 
-                ? 'bg-amber-500/10 border-amber-500 text-amber-400 shadow-[0_0_15px_rgba(245,158,11,0.3)]'
-                : 'bg-[#1A1A1A] border-white/10 text-zinc-400 hover:border-amber-500/50 hover:text-amber-400';
+                ? 'bg-fuchsia-500/10 border-fuchsia-500 text-fuchsia-400 shadow-[0_0_15px_rgba(217,70,239,0.3)]'
+                : 'bg-[#1A1A1A] border-white/10 text-zinc-400 hover:border-fuchsia-500/50 hover:text-fuchsia-400';
+            } else if (cat.id === 'other') {
+              themeClass = isActive 
+                ? 'bg-rose-500/10 border-rose-500 text-rose-400 shadow-[0_0_15px_rgba(244,63,94,0.3)]'
+                : 'bg-[#1A1A1A] border-white/10 text-zinc-400 hover:border-rose-500/50 hover:text-rose-400';
             }
             
             return (
@@ -150,7 +156,7 @@ export default function ReelShowcase() {
                 onClick={() => { setActiveCategory(cat.id); setCarouselIndex(0); setIsPlaying(true); }}
                 className={`px-6 py-2.5 rounded-full font-mono text-xs uppercase font-bold transition-all duration-300 border ${themeClass}`}
               >
-                {cat.label}
+                {t(`reel_categories.${cat.id}`, cat.label)}
               </button>
             );
           })}

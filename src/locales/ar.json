@@ -43,7 +43,9 @@
   "reel": {
     "label": "أرشيف مختار",
     "title": "إبداعاتنا",
-    "live": "مباشر"
+    "live": "مباشر",
+    "videos": "فيديوهات",
+    "video": "فيديو"
   },
   "bento": {
     "label": "الهيكل",
@@ -94,7 +96,25 @@
     "direche-abderrahmen": "مؤسس، مصور ومطور",
     "amel-allaoua": "صانعة محتوى",
     "yassmine-tifratene": "صانعة محتوى UGC",
-    "dhikra": "صانعة محتوى UGC"
+    "dhikra": "صانعة محتوى UGC",
+    "kawtar-ali-dahmane": "استراتيجية التسويق والتواصل"
+  },
+  "reel_categories": {
+    "all": "الكل",
+    "ugc": "محتوى المستخدمين",
+    "dentist": "طب الأسنان",
+    "esthetique": "التجميل",
+    "pharmacie": "صيدلة",
+    "evenement": "فعاليات",
+    "other": "أخرى"
+  },
+  "reel_subtitles": {
+    "ugc": "العناية بالبشرة والمنتجات",
+    "dentist": "عيادات طب الأسنان",
+    "esthetique": "الأمراض الجلدية والعناية",
+    "pharmacie": "طبي للصيدليات",
+    "evenement": "تغطية الفعاليات",
+    "other": "أخرى"
   },
   "footer": {
     "tagline": "البنية التحتية للتواصل من أجل المستقبل.",

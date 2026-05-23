@@ -1,12 +1,18 @@
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ArrowDown } from 'lucide-react';
 
 interface HeroProps {
   onViewPortfolio: () => void;
+  logoIndex: number;
+  rotation: number;
 }
 
-export default function Hero({ onViewPortfolio }: HeroProps) {
+export default function Hero({ onViewPortfolio, logoIndex, rotation }: HeroProps) {
   const { t } = useTranslation();
+
+  const logos = ['/mv.jpg', '/Ve.png'];
+  const brandNames = ['MISSION VERSE', 'VEXA'];
 
   return (
     <section
@@ -31,17 +37,25 @@ export default function Hero({ onViewPortfolio }: HeroProps) {
           {/* Middle pulsing ring */}
           <div className="absolute w-36 h-36 sm:w-52 sm:h-52 rounded-full border border-white/10 animate-[pulse_3s_ease-in-out_infinite]"></div>
           {/* Logo image */}
-          <img
-            src="/mv.jpg"
-            alt="Mission Verse Media Logo"
-            className="w-24 h-24 sm:w-36 sm:h-36 rounded-full object-cover border-2 border-[#0071ec]/60 shadow-[0_0_40px_rgba(0,113,236,0.5)] z-10"
-          />
+          <div 
+            className="z-10 transition-transform duration-700 ease-in-out [perspective:1000px]"
+            style={{ transform: `rotateY(${rotation}deg)` }}
+          >
+            <img
+              src={logos[logoIndex]}
+              alt="Mission Verse Media Logo"
+              className="w-24 h-24 sm:w-36 sm:h-36 rounded-full object-cover border-2 border-[#0071ec]/60 shadow-[0_0_40px_rgba(0,113,236,0.5)]"
+            />
+          </div>
         </div>
 
         {/* Brand Name */}
-        <div className="space-y-2 mt-8">
-          <h1 className="font-hanken text-4xl sm:text-6xl md:text-7xl font-extrabold text-white tracking-tight uppercase leading-none">
-            MISSION VERSE
+        <div className="space-y-2 mt-8 [perspective:1000px]">
+          <h1 
+            className="font-hanken text-4xl sm:text-6xl md:text-7xl font-extrabold text-white tracking-tight uppercase leading-none transition-transform duration-700 ease-in-out"
+            style={{ transform: `rotateX(${rotation}deg)` }}
+          >
+            {brandNames[logoIndex]}
           </h1>
           <p className="font-mono text-base sm:text-xl text-[#0071ec] tracking-[0.3em] uppercase font-semibold">
             MEDIA

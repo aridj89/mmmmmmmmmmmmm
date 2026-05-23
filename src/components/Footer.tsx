@@ -1,13 +1,19 @@
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ActiveTab } from '../types';
 
 interface FooterProps {
   setActiveTab: (tab: ActiveTab) => void;
+  logoIndex: number;
+  rotation: number;
 }
 
-export default function Footer({ setActiveTab }: FooterProps) {
+export default function Footer({ setActiveTab, logoIndex, rotation }: FooterProps) {
   const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
+
+  const logos = ['/mv.jpg', '/Ve.png'];
+  const brandNames = ['MISSION VERSE', 'VEXA'];
 
   return (
     <footer className="bg-[#0e0e0e] border-t border-white/10 w-full" id="global-footer">
@@ -15,10 +21,17 @@ export default function Footer({ setActiveTab }: FooterProps) {
         
         {/* Logo and Headline */}
         <div className="space-y-4 flex flex-col items-center">
-          <img src="/logo.jpg" alt="Mission Verse" className="w-16 h-16 rounded-md object-cover" />
-          <span className="font-hanken text-4xl md:text-5xl font-extrabold tracking-tighter text-white block">
-            MISSION VERSE
-          </span>
+          <div className="transition-transform duration-700 ease-in-out [perspective:1000px]" style={{ transform: `rotateY(${rotation}deg)` }}>
+            <img src={logos[logoIndex]} alt="Mission Verse" className="w-16 h-16 rounded-md object-cover transition-opacity duration-300" />
+          </div>
+          <div className="[perspective:1000px]">
+            <span 
+              className="font-hanken text-4xl md:text-5xl font-extrabold tracking-tighter text-white block uppercase transition-transform duration-700 ease-in-out"
+              style={{ transform: `rotateX(${rotation}deg)` }}
+            >
+              {brandNames[logoIndex]}
+            </span>
+          </div>
           <p className="text-zinc-500 font-mono text-xs tracking-wider uppercase">
             {t('footer.tagline')}
           </p>

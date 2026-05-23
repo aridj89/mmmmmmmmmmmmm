@@ -96,14 +96,25 @@
     "direche-abderrahmen": "FONDATEUR, PHOTOGRAPHE & DÉVELOPPEUR",
     "amel-allaoua": "CONTENT CREATOR",
     "yassmine-tifratene": "UGC CONTENT CREATOR",
-    "dhikra": "CRÉATRICE DE CONTENU UGC"
+    "dhikra": "CRÉATRICE DE CONTENU UGC",
+    "kawtar-ali-dahmane": "STRATÉGIE MARKETING & COMM. DE MARQUE"
+  },
+  "reel_categories": {
+    "all": "TOUT",
+    "ugc": "UGC",
+    "dentist": "DENTISTE",
+    "esthetique": "ESTHÉTIQUE",
+    "pharmacie": "PHARMACIE",
+    "evenement": "ÉVÉNEMENT",
+    "other": "AUTRE"
   },
   "reel_subtitles": {
     "ugc": "Skincare & Produits",
     "dentist": "Cliniques Dentaires",
     "esthetique": "Dermatologie & Soins",
     "pharmacie": "Medical For Pharmacy",
-    "orthophonia": "Cabinet Orthophonie"
+    "evenement": "Couverture d'événements",
+    "other": "Autre"
   },
   "footer": {
     "tagline": "INFRASTRUCTURE DE COMMUNICATION POUR LE FUTUR.",

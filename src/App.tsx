@@ -18,6 +18,19 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isRTL = i18n.language === 'ar';
 
+  const [logoIndex, setLogoIndex] = useState(0);
+  const [rotation, setRotation] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRotation(prev => prev + 360);
+      setTimeout(() => {
+        setLogoIndex(prev => (prev + 1) % 2);
+      }, 350);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
   // Lock body scroll when menu is open
   useEffect(() => {
     if (isMenuOpen) {
@@ -136,6 +149,8 @@ export default function App() {
           setActiveTab={handleTabChange} 
           isMenuOpen={isMenuOpen}
           setIsMenuOpen={setIsMenuOpen}
+          logoIndex={logoIndex}
+          rotation={rotation}
         />
 
         {/* Primary Context Container */}
@@ -156,6 +171,8 @@ export default function App() {
                   onViewPortfolio={() => {
                     handleTabChange('WORK');
                   }}
+                  logoIndex={logoIndex}
+                  rotation={rotation}
                 />
 
                 <LogoMarquee />
@@ -214,7 +231,7 @@ export default function App() {
         </main>
 
         {/* Universal Footer */}
-        <Footer setActiveTab={handleTabChange} />
+        <Footer setActiveTab={handleTabChange} logoIndex={logoIndex} rotation={rotation} />
 
         {/* Bottom Nav Bar (Mobile Only Viewport) */}
         <nav className="md:hidden fixed bottom-0 left-0 w-full bg-black/90 backdrop-blur-xl border-t border-white/10 flex justify-around items-center h-20 pb-safe z-40" id="mobile-bottom-navbar">
