@@ -87,10 +87,10 @@ export const REELS: Reel[] = [
   { id: 'ugc-03', category: 'ugc', title: 'UGC 03', videoUrl: 'https://res.cloudinary.com/dzuabnhmm/video/upload/v1779613888/3_zzlpaf.mp4' },
   { id: 'ugc-04', category: 'ugc', title: 'UGC 04', videoUrl: 'https://res.cloudinary.com/dzuabnhmm/video/upload/v1779616936/4_t9dkoy.mp4' },
   { id: 'ugc-06', category: 'ugc', title: 'UGC 06', videoUrl: 'https://res.cloudinary.com/dzuabnhmm/video/upload/v1779615642/6_pwyiyv.mp4' },
-  { id: 'ugc-07', category: 'ugc', title: 'UGC 07', videoUrl: '/videos/7.MP4' },
+  { id: 'ugc-07', category: 'ugc', title: 'UGC 07', videoUrl: 'https://res.cloudinary.com/dhpbwlsbs/video/upload/v1779635514/7_czjogl.mp4' },
 
   // Dentist
-  { id: 'dent-1', category: 'dentist', title: 'DENTIST 01', videoUrl: '/videos/D1.mp4' },
+  { id: 'dent-1', category: 'dentist', title: 'DENTIST 01', videoUrl: 'https://res.cloudinary.com/dhpbwlsbs/video/upload/v1779635871/D1_btulkn.mp4' },
   { id: 'dent-2', category: 'dentist', title: 'DENTIST 02', videoUrl: '/videos/D2.MP4' },
   { id: 'dent-3', category: 'dentist', title: 'DENTIST 03', videoUrl: '/videos/D3.mp4' },
   { id: 'dent-4', category: 'dentist', title: 'DENTIST 04', videoUrl: 'https://res.cloudinary.com/dzuabnhmm/video/upload/v1779628155/D4_cpfrhl.mov' },
@@ -101,19 +101,19 @@ export const REELS: Reel[] = [
   { id: 'dent-9', category: 'dentist', title: 'DENTIST 09', videoUrl: '/videos/D9.mp4' },
 
   // Esthétique
-  { id: 'derma-1', category: 'esthetique', title: 'DERMA 01', videoUrl: '/videos/derma1.mp4' },
+  { id: 'derma-1', category: 'esthetique', title: 'DERMA 01', videoUrl: 'https://res.cloudinary.com/dhpbwlsbs/video/upload/v1779635774/derma1_vhlgwo.mp4' },
   { id: 'derma-2', category: 'esthetique', title: 'DERMA 02', videoUrl: '/videos/derma2.mp4' },
-  { id: 'derma-3', category: 'esthetique', title: 'DERMA 03', videoUrl: '/videos/derma3.mp4' },
+  { id: 'derma-3', category: 'esthetique', title: 'DERMA 03', videoUrl: 'https://res.cloudinary.com/dhpbwlsbs/video/upload/v1779636088/derma3_k7vfbl.mp4' },
   { id: 'derma-4', category: 'esthetique', title: 'DERMA 04', videoUrl: 'https://res.cloudinary.com/dzuabnhmm/video/upload/v1779617109/derma4_c9fcuj.mp4' },
 
   // Pharmacie
   { id: 'ph-1', category: 'pharmacie', title: 'PHARMA 01', videoUrl: '/videos/ph1.mp4' },
   { id: 'ph-2', category: 'pharmacie', title: 'PHARMA 02', videoUrl: '/videos/ph2.mp4' },
   { id: 'ph-3', category: 'pharmacie', title: 'PHARMA 03', videoUrl: '/videos/ph3.MP4' },
-  { id: 'ph-4', category: 'pharmacie', title: 'PHARMA 04', videoUrl: '/videos/ph04.mp4' },
+  { id: 'ph-4', category: 'pharmacie', title: 'PHARMA 04', videoUrl: 'https://res.cloudinary.com/dhpbwlsbs/video/upload/v1779629414/ph04_h5k88e.mp4' },
 
   // Événement
-  { id: 'ev-1', category: 'evenement', title: 'EVENT 01', videoUrl: '/videos/eve1.mp4' },
+  { id: 'ev-1', category: 'evenement', title: 'EVENT 01', videoUrl: 'https://res.cloudinary.com/dhpbwlsbs/video/upload/v1779635999/eve1_tpw6hr.mp4' },
   { id: 'ev-2', category: 'evenement', title: 'EVENT 02', videoUrl: '/videos/eve2.mp4' },
   { id: 'ev-3', category: 'evenement', title: 'EVENT 03', videoUrl: '/videos/eve3.mp4' },
 ];
