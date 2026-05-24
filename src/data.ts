@@ -83,12 +83,12 @@ export const REEL_CATEGORIES = [
 
 export const REELS: Reel[] = [
   // UGC
-  { id: 'ugc-01', category: 'ugc', title: 'UGC 01', videoUrl: '/videos/1.MP4' },
+  { id: 'ugc-01', category: 'ugc', title: 'UGC 01', videoUrl: 'https://res.cloudinary.com/dzuabnhmm/video/upload/v1779613134/1_z4ckvy.mp4' },
   { id: 'ugc-02', category: 'ugc', title: 'UGC 02', videoUrl: '/videos/2.mp4' },
-  { id: 'ugc-03', category: 'ugc', title: 'UGC 03', videoUrl: '/videos/3.mp4' },
-  { id: 'ugc-04', category: 'ugc', title: 'UGC 04', videoUrl: '/videos/4.MP4' },
+  { id: 'ugc-03', category: 'ugc', title: 'UGC 03', videoUrl: 'https://res.cloudinary.com/dzuabnhmm/video/upload/v1779613888/3_zzlpaf.mp4' },
+  { id: 'ugc-04', category: 'ugc', title: 'UGC 04', videoUrl: 'https://res.cloudinary.com/dzuabnhmm/video/upload/v1779616936/4_t9dkoy.mp4' },
   { id: 'ugc-05', category: 'ugc', title: 'UGC 05', videoUrl: '/videos/5.mp4' },
-  { id: 'ugc-06', category: 'ugc', title: 'UGC 06', videoUrl: '/videos/6.mp4' },
+  { id: 'ugc-06', category: 'ugc', title: 'UGC 06', videoUrl: 'https://res.cloudinary.com/dzuabnhmm/video/upload/v1779615642/6_pwyiyv.mp4' },
   { id: 'ugc-07', category: 'ugc', title: 'UGC 07', videoUrl: '/videos/7.MP4' },
 
   // Dentist
@@ -106,7 +106,7 @@ export const REELS: Reel[] = [
   { id: 'derma-1', category: 'esthetique', title: 'DERMA 01', videoUrl: '/videos/derma1.mp4' },
   { id: 'derma-2', category: 'esthetique', title: 'DERMA 02', videoUrl: '/videos/derma2.mp4' },
   { id: 'derma-3', category: 'esthetique', title: 'DERMA 03', videoUrl: '/videos/derma3.mp4' },
-  { id: 'derma-4', category: 'esthetique', title: 'DERMA 04', videoUrl: '/videos/derma4.mp4' },
+  { id: 'derma-4', category: 'esthetique', title: 'DERMA 04', videoUrl: 'https://res.cloudinary.com/dzuabnhmm/video/upload/v1779617109/derma4_c9fcuj.mp4' },
 
   // Pharmacie
   { id: 'ph-1', category: 'pharmacie', title: 'PHARMA 01', videoUrl: '/videos/ph1.mp4' },
