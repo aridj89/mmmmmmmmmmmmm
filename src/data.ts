@@ -86,7 +86,6 @@ export const REELS: Reel[] = [
   { id: 'ugc-01', category: 'ugc', title: 'UGC 01', videoUrl: 'https://res.cloudinary.com/dzuabnhmm/video/upload/v1779613134/1_z4ckvy.mp4' },
   { id: 'ugc-03', category: 'ugc', title: 'UGC 03', videoUrl: 'https://res.cloudinary.com/dzuabnhmm/video/upload/v1779613888/3_zzlpaf.mp4' },
   { id: 'ugc-04', category: 'ugc', title: 'UGC 04', videoUrl: 'https://res.cloudinary.com/dzuabnhmm/video/upload/v1779616936/4_t9dkoy.mp4' },
-  { id: 'ugc-05', category: 'ugc', title: 'UGC 05', videoUrl: '/videos/5.mp4' },
   { id: 'ugc-06', category: 'ugc', title: 'UGC 06', videoUrl: 'https://res.cloudinary.com/dzuabnhmm/video/upload/v1779615642/6_pwyiyv.mp4' },
   { id: 'ugc-07', category: 'ugc', title: 'UGC 07', videoUrl: '/videos/7.MP4' },
 
