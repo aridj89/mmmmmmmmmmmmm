@@ -34,6 +34,17 @@ export default function ReelShowcase() {
   // Center Video State
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -204,7 +215,6 @@ export default function ReelShowcase() {
             if (Math.abs(diff) > 2) return null;
 
             const isCenter = diff === 0;
-            const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
             const translateX = diff * (isMobile ? 75 : 120);
             const scale = isCenter ? 1 : (isMobile ? 0.85 : 0.8);
             const zIndex = 10 - Math.abs(diff);
