@@ -91,7 +91,7 @@ export const REELS: Reel[] = [
 
   // Dentist
   { id: 'dent-1', category: 'dentist', title: 'DENTIST 01', videoUrl: 'https://res.cloudinary.com/dhpbwlsbs/video/upload/v1779635871/D1_btulkn.mp4' },
-  { id: 'dent-2', category: 'dentist', title: 'DENTIST 02', videoUrl: '/videos/D2.MP4' },
+  { id: 'dent-2', category: 'dentist', title: 'DENTIST 02', videoUrl: 'https://res.cloudinary.com/dhpbwlsbs/video/upload/v1779636353/D2_kblptd.mov' },
   { id: 'dent-3', category: 'dentist', title: 'DENTIST 03', videoUrl: '/videos/D3.mp4' },
   { id: 'dent-4', category: 'dentist', title: 'DENTIST 04', videoUrl: 'https://res.cloudinary.com/dzuabnhmm/video/upload/v1779628155/D4_cpfrhl.mov' },
   { id: 'dent-5', category: 'dentist', title: 'DENTIST 05', videoUrl: 'https://res.cloudinary.com/dzuabnhmm/video/upload/v1779628332/D5_s29kyc.mp4' },
