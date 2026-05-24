@@ -92,30 +92,19 @@ export const REELS: Reel[] = [
   // Dentist
   { id: 'dent-1', category: 'dentist', title: 'DENTIST 01', videoUrl: 'https://res.cloudinary.com/dhpbwlsbs/video/upload/v1779635871/D1_btulkn.mp4' },
   { id: 'dent-2', category: 'dentist', title: 'DENTIST 02', videoUrl: 'https://res.cloudinary.com/dhpbwlsbs/video/upload/v1779636353/D2_kblptd.mov' },
-  { id: 'dent-3', category: 'dentist', title: 'DENTIST 03', videoUrl: '/videos/D3.mp4' },
   { id: 'dent-4', category: 'dentist', title: 'DENTIST 04', videoUrl: 'https://res.cloudinary.com/dzuabnhmm/video/upload/v1779628155/D4_cpfrhl.mov' },
   { id: 'dent-5', category: 'dentist', title: 'DENTIST 05', videoUrl: 'https://res.cloudinary.com/dzuabnhmm/video/upload/v1779628332/D5_s29kyc.mp4' },
-  { id: 'dent-6', category: 'dentist', title: 'DENTIST 06', videoUrl: '/videos/D6.mp4' },
-  { id: 'dent-7', category: 'dentist', title: 'DENTIST 07', videoUrl: '/videos/D7.mp4' },
-  { id: 'dent-8', category: 'dentist', title: 'DENTIST 08', videoUrl: '/videos/D8.mp4' },
-  { id: 'dent-9', category: 'dentist', title: 'DENTIST 09', videoUrl: '/videos/D9.mp4' },
 
   // Esthétique
   { id: 'derma-1', category: 'esthetique', title: 'DERMA 01', videoUrl: 'https://res.cloudinary.com/dhpbwlsbs/video/upload/v1779635774/derma1_vhlgwo.mp4' },
-  { id: 'derma-2', category: 'esthetique', title: 'DERMA 02', videoUrl: '/videos/derma2.mp4' },
   { id: 'derma-3', category: 'esthetique', title: 'DERMA 03', videoUrl: 'https://res.cloudinary.com/dhpbwlsbs/video/upload/v1779636088/derma3_k7vfbl.mp4' },
   { id: 'derma-4', category: 'esthetique', title: 'DERMA 04', videoUrl: 'https://res.cloudinary.com/dzuabnhmm/video/upload/v1779617109/derma4_c9fcuj.mp4' },
 
   // Pharmacie
-  { id: 'ph-1', category: 'pharmacie', title: 'PHARMA 01', videoUrl: '/videos/ph1.mp4' },
-  { id: 'ph-2', category: 'pharmacie', title: 'PHARMA 02', videoUrl: '/videos/ph2.mp4' },
-  { id: 'ph-3', category: 'pharmacie', title: 'PHARMA 03', videoUrl: '/videos/ph3.MP4' },
   { id: 'ph-4', category: 'pharmacie', title: 'PHARMA 04', videoUrl: 'https://res.cloudinary.com/dhpbwlsbs/video/upload/v1779629414/ph04_h5k88e.mp4' },
 
   // Événement
   { id: 'ev-1', category: 'evenement', title: 'EVENT 01', videoUrl: 'https://res.cloudinary.com/dhpbwlsbs/video/upload/v1779635999/eve1_tpw6hr.mp4' },
-  { id: 'ev-2', category: 'evenement', title: 'EVENT 02', videoUrl: '/videos/eve2.mp4' },
-  { id: 'ev-3', category: 'evenement', title: 'EVENT 03', videoUrl: '/videos/eve3.mp4' },
 ];
 
 export const BENTO_PROJECTS: BentoProject[] = [
