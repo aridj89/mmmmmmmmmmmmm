@@ -92,6 +92,7 @@ export const REELS: Reel[] = [
   // Dentist
   { id: 'dent-1', category: 'dentist', title: 'DENTIST 01', videoUrl: 'https://res.cloudinary.com/dhpbwlsbs/video/upload/v1779635871/D1_btulkn.mp4' },
   { id: 'dent-2', category: 'dentist', title: 'DENTIST 02', videoUrl: 'https://res.cloudinary.com/dhpbwlsbs/video/upload/v1779636353/D2_kblptd.mov' },
+  { id: 'dent-3', category: 'dentist', title: 'DENTIST 03', videoUrl: 'https://res.cloudinary.com/dhpbwlsbs/video/upload/v1779639902/aymen_sfx_wbsxyn.mp4' },
   { id: 'dent-4', category: 'dentist', title: 'DENTIST 04', videoUrl: 'https://res.cloudinary.com/dzuabnhmm/video/upload/v1779628155/D4_cpfrhl.mov' },
   { id: 'dent-5', category: 'dentist', title: 'DENTIST 05', videoUrl: 'https://res.cloudinary.com/dzuabnhmm/video/upload/v1779628332/D5_s29kyc.mp4' },
 
@@ -101,6 +102,8 @@ export const REELS: Reel[] = [
   { id: 'derma-4', category: 'esthetique', title: 'DERMA 04', videoUrl: 'https://res.cloudinary.com/dzuabnhmm/video/upload/v1779617109/derma4_c9fcuj.mp4' },
 
   // Pharmacie
+  { id: 'ph-1', category: 'pharmacie', title: 'PHARMA 01', videoUrl: 'https://res.cloudinary.com/dhpbwlsbs/video/upload/v1779639047/_%D8%AA%D8%B3%D8%A7%D9%82%D8%B7_%D8%B4%D8%B9%D8%B1%D9%83__%D8%AF%D9%8A%D8%B1%D9%8A_%D8%AA%D8%AD%D8%A7%D9%84%D9%8A%D9%84_%D9%88%D8%A7%D8%AA%D8%A8%D9%91%D8%B9%D9%8A_%D8%B1%D9%88%D8%AA%D9%8A%D9%86_%D8%A8%D8%B3%D9%8A%D8%B7_%D9%8A%D8%B1%D8%AC%D9%91%D8%B9%D9%88_%D9%82%D9%88%D9%8A_____%D9%85%D8%A7%D9%84%D9%81%D8%A9_uflxc4.mp4' },
+  { id: 'ph-3', category: 'pharmacie', title: 'PHARMA 03', videoUrl: 'https://res.cloudinary.com/dhpbwlsbs/video/upload/v1779575761/ph3_l94s47.mp4' },
   { id: 'ph-4', category: 'pharmacie', title: 'PHARMA 04', videoUrl: 'https://res.cloudinary.com/dhpbwlsbs/video/upload/v1779629414/ph04_h5k88e.mp4' },
 
   // Événement
