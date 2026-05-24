@@ -105,6 +105,8 @@ export const REELS: Reel[] = [
 
   // Événement
   { id: 'ev-1', category: 'evenement', title: 'EVENT 01', videoUrl: 'https://res.cloudinary.com/dhpbwlsbs/video/upload/v1779635999/eve1_tpw6hr.mp4' },
+  { id: 'ev-2', category: 'evenement', title: 'EVENT 02', videoUrl: 'https://res.cloudinary.com/dhpbwlsbs/video/upload/v1779638821/pix_vcn1l2.mp4' },
+  { id: 'ev-3', category: 'evenement', title: 'EVENT 03', videoUrl: 'https://res.cloudinary.com/dhpbwlsbs/video/upload/v1779638720/teaser_22_fc2zui.mp4' },
 ];
 
 export const BENTO_PROJECTS: BentoProject[] = [
